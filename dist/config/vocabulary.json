@@ -4,28 +4,28 @@
   "categories": [
     {
       "id": "food",
-      "name": "Food",
+      "name": "🍽️ Food",
       "color": "#E8F5E9",
       "accentColor": "#388E3C",
-      "items": ["apple", "banana", "water", "milk", "bread", "cookie"]
+      "items": ["apple", "banana", "water", "milk", "bread", "cookie", "sausage"]
     },
     {
       "id": "activities",
-      "name": "Activities",
+      "name": "⚽ Activities",
       "color": "#E3F2FD",
       "accentColor": "#1565C0",
-      "items": ["play", "sleep", "read", "draw", "outside", "bath"]
+      "items": ["play", "sleep", "read", "draw", "outside", "bath", "jump"]
     },
     {
       "id": "feelings",
-      "name": "Feelings",
+      "name": "🙂 Feelings",
       "color": "#FFF3E0",
       "accentColor": "#E65100",
-      "items": ["happy", "sad", "tired", "hurt", "scared", "excited"]
+      "items": ["happy", "sad", "tired", "hurt", "scared", "excited", "angry"]
     },
     {
       "id": "people",
-      "name": "People",
+      "name": "👥 People",
       "color": "#F3E5F5",
       "accentColor": "#6A1B9A",
       "items": ["mom", "dad", "sister", "friend"]
@@ -100,7 +100,7 @@
     },
     "sleep": {
       "label": "Sleep",
-      "image": "/images/sleep.svg",
+      "image": "/images/bed.svg",
       "audio": "/audio/sleep.mp3"
     },
     "read": {
@@ -122,6 +122,11 @@
       "label": "Bath",
       "image": "/images/bath.svg",
       "audio": "/audio/bath.mp3"
+    },
+    "jump": {
+      "label": "Jump",
+      "image": "/images/trampoline.svg",
+      "audio": "/audio/jump.mp3"
     },
     "happy": {
       "label": "Happy",
@@ -172,6 +177,16 @@
       "label": "Friend",
       "image": "/images/friend.svg",
       "audio": "/audio/friend.mp3"
+    },
+    "angry": {
+      "label": "Angry",
+      "image": "/images/angry.svg",
+      "audio": "/audio/angry.mp3"
+    },
+    "sausage": {
+      "label": "Sausage",
+      "image": "/images/sausage.svg",
+      "audio": "/audio/sausage.mp3"
     }
   }
 }
