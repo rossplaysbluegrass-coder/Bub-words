@@ -29,7 +29,7 @@ export function useAudio() {
       // code 4 = MEDIA_ERR_SRC_NOT_SUPPORTED (bad format or 404)
       // code 2 = MEDIA_ERR_NETWORK
       console.error(
-        `[FreeAAC] Failed to preload audio (code ${code}): ${url}\n` +
+        `[Bub Words] Failed to preload audio (code ${code}): ${url}\n` +
           (code === 4
             ? 'File not found, corrupt, or in an unsupported format (e.g. AAC/M4A renamed to .mp3). Re-encode with ffmpeg: ffmpeg -i input -codec:a libmp3lame -qscale:a 2 output.mp3'
             : message)
@@ -78,7 +78,7 @@ export function useAudio() {
       playPromise.catch((err) => {
         if (err.name === 'NotAllowedError') {
           // Autoplay policy — should not happen on a direct user tap.
-          console.warn('[FreeAAC] Audio blocked by autoplay policy:', url);
+          console.warn('[Bub Words] Audio blocked by autoplay policy:', url);
           return;
         }
         if (err.name === 'NotSupportedError') {
@@ -87,21 +87,21 @@ export function useAudio() {
             .then((res) => {
               if (!res.ok) {
                 console.error(
-                  `[FreeAAC] Audio file not found (HTTP ${res.status}): ${url}\n` +
+                  `[Bub Words] Audio file not found (HTTP ${res.status}): ${url}\n` +
                   'Check that the file exists at public/audio/<name>.mp3'
                 );
               } else {
                 console.error(
-                  `[FreeAAC] Audio file exists but cannot be decoded: ${url}\n` +
+                  `[Bub Words] Audio file exists but cannot be decoded: ${url}\n` +
                   `Content-Type: ${res.headers.get('content-type')}\n` +
                   'The file may be corrupt, empty, or in an unsupported format.'
                 );
               }
             })
-            .catch(() => console.error('[FreeAAC] Audio file unreachable:', url));
+            .catch(() => console.error('[Bub Words] Audio file unreachable:', url));
           return;
         }
-        console.error('[FreeAAC] Audio play failed:', url, err);
+        console.error('[Bub Words] Audio play failed:', url, err);
       });
     }
   }, []);

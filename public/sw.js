@@ -1,5 +1,5 @@
 /**
- * FreeAAC Service Worker
+ * Bub Words Service Worker
  *
  * Strategy:
  *  - Install: pre-cache the app shell (HTML + manifest)

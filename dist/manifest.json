@@ -1,7 +1,7 @@
 {
-  "name": "FreeAAC",
-  "short_name": "FreeAAC",
-  "description": "Augmentative and Alternative Communication app for non-verbal users",
+  "name": "Bub Words",
+  "short_name": "Bub Words",
+  "description": "Augmentative and Alternative Communication app designed for children who are non-verbal or have speech challenges",
   "start_url": "/",
   "display": "standalone",
   "orientation": "landscape",

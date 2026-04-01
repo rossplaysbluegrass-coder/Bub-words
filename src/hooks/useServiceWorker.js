@@ -73,7 +73,7 @@ export function useServiceWorker() {
     // browser policy, or first-boot race), unlock the app after 10 s.
     const fallbackTimer = setTimeout(() => {
       setCacheComplete((prev) => {
-        if (!prev) console.warn('[FreeAAC] SW cache timeout — showing app anyway');
+        if (!prev) console.warn('[Bub Words] SW cache timeout — showing app anyway');
         return true;
       });
     }, 10_000);

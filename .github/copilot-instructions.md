@@ -1,8 +1,8 @@
-# FreeAAC – Copilot Instructions
+# Bub Words – Copilot Instructions
 
 ## Project Purpose
-FreeAAC is a Progressive Web App (PWA) for Augmentative and Alternative Communication (AAC).
-It helps non-verbal autistic children communicate using image+audio vocabulary tiles.
+Bub Words is a Progressive Web App (PWA) for Augmentative and Alternative Communication (AAC).
+It helps non-verbal and pre-verbal children communicate using image+audio vocabulary tiles.
 
 ## Architecture
 - **React 18** + **Vite 6** — fast, minimal build tooling

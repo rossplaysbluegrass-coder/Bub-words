@@ -6,6 +6,7 @@ import { LoadingScreen } from './components/LoadingScreen.jsx';
 import { KeyWordsBar } from './components/KeyWordsBar.jsx';
 import { CategoryNav } from './components/CategoryNav.jsx';
 import { VocabularyGrid } from './components/VocabularyGrid.jsx';
+import { InstallPrompt } from './components/InstallPrompt.jsx';
 import './styles/App.css';
 
 /**
@@ -100,6 +101,9 @@ export default function App() {
           onSelect={handleSelect}
         />
       </main>
+
+      {/* Install app button — one-tap, appears only on installable devices */}
+      <InstallPrompt />
     </div>
   );
 }
