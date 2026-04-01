@@ -1,0 +1,52 @@
+/* ── Category navigation bar ─────────────────────────────────────────────── */
+.category-nav {
+  flex-shrink: 0;
+  height: var(--category-nav-height);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.category-nav__list {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  list-style: none;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.category-nav__list::-webkit-scrollbar {
+  display: none;
+}
+
+.category-nav__btn {
+  height: 100%;
+  padding: 0 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  min-width: var(--min-tap);
+}
+
+.category-nav__btn:hover,
+.category-nav__btn:focus-visible {
+  color: var(--color-primary);
+  outline: none;
+}
+
+.category-nav__btn--active {
+  color: var(--cat-accent, var(--color-primary));
+  border-bottom-color: var(--cat-accent, var(--color-primary));
+}
+
+/* Touch: slightly larger on narrow screens */
+@media (max-width: 600px) {
+  .category-nav__btn {
+    padding: 0 16px;
+    font-size: 0.95rem;
+  }
+}

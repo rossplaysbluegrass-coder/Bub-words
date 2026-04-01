@@ -1,0 +1,65 @@
+/* ── Reset & base ────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: #f5f5f5;
+  color: #1a1a1a;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  /* Prevent text selection on rapid taps */
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Remove default button styles */
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ── CSS Custom Properties (theme) ──────────────────────────────────────── */
+:root {
+  --color-primary: #4A90D9;
+  --color-primary-dark: #2c6faf;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f0f4f8;
+  --color-border: #dde3ea;
+  --color-text: #1a1a1a;
+  --color-text-muted: #5a6a7a;
+
+  --keywords-height: 110px;
+  --category-nav-height: 52px;
+  --border-radius: 16px;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.12);
+
+  /* Minimum tap target size per WCAG 2.5.5 */
+  --min-tap: 48px;
+}
+
+/* ── High-contrast media query ───────────────────────────────────────────── */
+@media (prefers-contrast: more) {
+  :root {
+    --color-border: #000;
+    --color-text: #000;
+  }
+}

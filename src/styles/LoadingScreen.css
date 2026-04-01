@@ -1,0 +1,99 @@
+/* ── Loading / first-boot screen ─────────────────────────────────────────── */
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-surface);
+  z-index: 1000;
+}
+
+.loading-screen__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: 360px;
+  width: 90%;
+  text-align: center;
+}
+
+/* App icon / checkmark animation */
+.loading-screen__icon {
+  width: 80px;
+  height: 80px;
+  animation: icon-breathe 2.5s ease-in-out infinite;
+}
+
+.loading-screen__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes icon-breathe {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.75; transform: scale(0.96); }
+}
+
+/* Titles */
+.loading-screen__title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  letter-spacing: -0.02em;
+}
+
+.loading-screen__subtitle {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  margin-top: -12px;
+}
+
+/* ── Progress bar ────────────────────────────────────────────────────────── */
+.loading-screen__progress {
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+}
+
+/* Track */
+.loading-screen__progress-track {
+  width: 100%;
+  height: 10px;
+  background: var(--color-surface-alt);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+/* Fill */
+.loading-screen__progress-bar {
+  height: 100%;
+  min-width: 4px;
+  background: var(--color-primary);
+  border-radius: 999px;
+  transition: width 0.25s ease;
+}
+
+.loading-screen__progress-label {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+/* ── Spinner (while waiting for SW) ─────────────────────────────────────── */
+.loading-screen__spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--color-surface-alt);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

@@ -1,0 +1,192 @@
+{
+  "keyWords": ["more", "help", "stop", "yes", "no", "please"],
+
+  "categories": [
+    {
+      "id": "food",
+      "name": "🍽️ Food",
+      "color": "#E8F5E9",
+      "accentColor": "#388E3C",
+      "items": ["apple", "banana", "water", "milk", "bread", "cookie", "sausage"]
+    },
+    {
+      "id": "activities",
+      "name": "⚽ Activities",
+      "color": "#E3F2FD",
+      "accentColor": "#1565C0",
+      "items": ["play", "sleep", "read", "draw", "outside", "bath", "jump"]
+    },
+    {
+      "id": "feelings",
+      "name": "🙂 Feelings",
+      "color": "#FFF3E0",
+      "accentColor": "#E65100",
+      "items": ["happy", "sad", "tired", "hurt", "scared", "excited", "angry"]
+    },
+    {
+      "id": "people",
+      "name": "👥 People",
+      "color": "#F3E5F5",
+      "accentColor": "#6A1B9A",
+      "items": ["mom", "dad", "sister", "friend"]
+    }
+  ],
+
+  "items": {
+    "more": {
+      "label": "More",
+      "image": "/images/more.svg",
+      "audio": "/audio/more.mp3"
+    },
+    "help": {
+      "label": "Help",
+      "image": "/images/help.svg",
+      "audio": "/audio/help.mp3"
+    },
+    "stop": {
+      "label": "Stop",
+      "image": "/images/stop.svg",
+      "audio": "/audio/stop.mp3"
+    },
+    "yes": {
+      "label": "Yes",
+      "image": "/images/yes.svg",
+      "audio": "/audio/yes.mp3"
+    },
+    "no": {
+      "label": "No",
+      "image": "/images/no.svg",
+      "audio": "/audio/no.mp3"
+    },
+    "please": {
+      "label": "Please",
+      "image": "/images/please.svg",
+      "audio": "/audio/please.mp3"
+    },
+    "apple": {
+      "label": "Apple",
+      "image": "/images/apple.svg",
+      "audio": "/audio/apple.mp3"
+    },
+    "banana": {
+      "label": "Banana",
+      "image": "/images/banana.svg",
+      "audio": "/audio/banana.mp3"
+    },
+    "water": {
+      "label": "Water",
+      "image": "/images/water.svg",
+      "audio": "/audio/water.mp3"
+    },
+    "milk": {
+      "label": "Milk",
+      "image": "/images/milk.svg",
+      "audio": "/audio/milk.mp3"
+    },
+    "bread": {
+      "label": "Bread",
+      "image": "/images/bread.svg",
+      "audio": "/audio/bread.mp3"
+    },
+    "cookie": {
+      "label": "Cookie",
+      "image": "/images/cookie.svg",
+      "audio": "/audio/cookie.mp3"
+    },
+    "play": {
+      "label": "Play",
+      "image": "/images/play.svg",
+      "audio": "/audio/play.mp3"
+    },
+    "sleep": {
+      "label": "Sleep",
+      "image": "/images/bed.svg",
+      "audio": "/audio/sleep.mp3"
+    },
+    "read": {
+      "label": "Read",
+      "image": "/images/read.svg",
+      "audio": "/audio/read.mp3"
+    },
+    "draw": {
+      "label": "Draw",
+      "image": "/images/draw.svg",
+      "audio": "/audio/draw.mp3"
+    },
+    "outside": {
+      "label": "Outside",
+      "image": "/images/outside.svg",
+      "audio": "/audio/outside.mp3"
+    },
+    "bath": {
+      "label": "Bath",
+      "image": "/images/bath.svg",
+      "audio": "/audio/bath.mp3"
+    },
+    "jump": {
+      "label": "Jump",
+      "image": "/images/trampoline.svg",
+      "audio": "/audio/jump.mp3"
+    },
+    "happy": {
+      "label": "Happy",
+      "image": "/images/happy.svg",
+      "audio": "/audio/happy.mp3"
+    },
+    "sad": {
+      "label": "Sad",
+      "image": "/images/sad.svg",
+      "audio": "/audio/sad.mp3"
+    },
+    "tired": {
+      "label": "Tired",
+      "image": "/images/tired.svg",
+      "audio": "/audio/tired.mp3"
+    },
+    "hurt": {
+      "label": "Hurt",
+      "image": "/images/hurt.svg",
+      "audio": "/audio/hurt.mp3"
+    },
+    "scared": {
+      "label": "Scared",
+      "image": "/images/scared.svg",
+      "audio": "/audio/scared.mp3"
+    },
+    "excited": {
+      "label": "Excited",
+      "image": "/images/excited.svg",
+      "audio": "/audio/excited.mp3"
+    },
+    "mom": {
+      "label": "Mom",
+      "image": "/images/mom.svg",
+      "audio": "/audio/mom.mp3"
+    },
+    "dad": {
+      "label": "Dad",
+      "image": "/images/dad.svg",
+      "audio": "/audio/dad.mp3"
+    },
+    "sister": {
+      "label": "Sister",
+      "image": "/images/sister.svg",
+      "audio": "/audio/sister.mp3"
+    },
+    "friend": {
+      "label": "Friend",
+      "image": "/images/friend.svg",
+      "audio": "/audio/friend.mp3"
+    },
+    "angry": {
+      "label": "Angry",
+      "image": "/images/angry.svg",
+      "audio": "/audio/angry.mp3"
+    },
+    "sausage": {
+      "label": "Sausage",
+      "image": "/images/sausage.svg",
+      "audio": "/audio/sausage.mp3"
+    }
+  }
+}

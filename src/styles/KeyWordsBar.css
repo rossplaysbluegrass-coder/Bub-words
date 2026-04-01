@@ -1,0 +1,33 @@
+/* ── Keywords bar ────────────────────────────────────────────────────────── */
+.keywords-bar {
+  flex-shrink: 0;
+  height: var(--keywords-height);
+  background: var(--color-surface);
+  border-bottom: 2px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  padding: 8px 12px;
+  z-index: 10;
+}
+
+.keywords-bar__list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  height: 100%;
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.keywords-bar__list::-webkit-scrollbar {
+  display: none;
+}
+
+.keywords-bar__item {
+  flex-shrink: 0;
+  height: 100%;
+  scroll-snap-align: start;
+}

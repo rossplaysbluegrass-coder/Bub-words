@@ -1,0 +1,32 @@
+/* ── Vocabulary grid ─────────────────────────────────────────────────────── */
+.vocab-grid {
+  flex: 1;
+  overflow-y: auto;
+  background: var(--grid-bg, var(--color-surface-alt));
+  padding: 16px;
+  /* Smooth scroll on iOS */
+  -webkit-overflow-scrolling: touch;
+}
+
+.vocab-grid__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+  list-style: none;
+}
+
+/* Tablet landscape */
+@media (min-width: 768px) {
+  .vocab-grid__list {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 16px;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1200px) {
+  .vocab-grid__list {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+  }
+}
