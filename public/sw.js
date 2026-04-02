@@ -11,7 +11,7 @@
 
 // Increment this whenever you replace existing asset files (images/audio).
 // Adding new files doesn't require a bump — only replacing existing ones.
-const CACHE_VERSION = 'v2';
+const CACHE_VERSION = 'v3';
 const SHELL_CACHE = `freeaac-shell-${CACHE_VERSION}`;
 const ASSET_CACHE = `freeaac-assets-${CACHE_VERSION}`;
 

@@ -4,7 +4,6 @@
   "description": "Augmentative and Alternative Communication app designed for children who are non-verbal or have speech challenges",
   "start_url": "/",
   "display": "standalone",
-  "orientation": "landscape",
   "background_color": "#FFFFFF",
   "theme_color": "#4A90D9",
   "icons": [

@@ -29,7 +29,7 @@ export function LoadingScreen({ progress }) {
           </svg>
         </div>
 
-        <h1 className="loading-screen__title">FreeAAC</h1>
+        <h1 className="loading-screen__title">Bub Words</h1>
         <p className="loading-screen__subtitle">Preparing your app…</p>
 
         {progress && progress.total > 0 && (
