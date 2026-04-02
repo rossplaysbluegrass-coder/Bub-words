@@ -14,3 +14,23 @@
   display: flex;
   flex-direction: column;
 }
+
+.app__parent-launch {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 150;
+  min-height: var(--min-tap);
+  border-radius: 10px;
+  border: 1px solid #1e5f95;
+  background: #2c6faf;
+  color: #fff;
+  font-weight: 700;
+  padding: 8px 12px;
+  box-shadow: var(--shadow-sm);
+}
+
+.app__parent-launch:focus-visible {
+  outline: 3px solid #90caf9;
+  outline-offset: 2px;
+}

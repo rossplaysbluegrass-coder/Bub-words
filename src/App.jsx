@@ -6,7 +6,9 @@ import { LoadingScreen } from './components/LoadingScreen.jsx';
 import { KeyWordsBar } from './components/KeyWordsBar.jsx';
 import { CategoryNav } from './components/CategoryNav.jsx';
 import { VocabularyGrid } from './components/VocabularyGrid.jsx';
+import { ParentMode } from './components/ParentMode.jsx';
 import { InstallPrompt } from './components/InstallPrompt.jsx';
+import { applyOverrides, loadOverrides } from './utils/vocabularyOverrides.js';
 import './styles/App.css';
 
 /**
@@ -25,7 +27,13 @@ export default function App() {
   const { swReady, cacheProgress, cacheComplete, triggerCache } =
     useServiceWorker();
 
+  const [overrides, setOverrides] = useState(() => loadOverrides());
+  const [isParentModeOpen, setIsParentModeOpen] = useState(false);
   const [activeCategoryId, setActiveCategoryId] = useState(null);
+
+  const effectiveVocabulary = React.useMemo(() => {
+    return applyOverrides(vocabulary, overrides);
+  }, [vocabulary, overrides]);
 
   // ── 1. Derive all asset URLs from vocabulary ────────────────────────────────
   const allAssetUrls = React.useMemo(() => {
@@ -43,10 +51,24 @@ export default function App() {
 
   // ── 3. Set the first category as active when vocabulary loads ───────────────
   useEffect(() => {
-    if (vocabulary?.categories?.length && !activeCategoryId) {
-      setActiveCategoryId(vocabulary.categories[0].id);
+    if (!effectiveVocabulary?.categories?.length) {
+      setActiveCategoryId(null);
+      return;
     }
-  }, [vocabulary, activeCategoryId]);
+
+    if (!activeCategoryId) {
+      setActiveCategoryId(effectiveVocabulary.categories[0].id);
+      return;
+    }
+
+    const stillExists = effectiveVocabulary.categories.some(
+      (category) => category.id === activeCategoryId
+    );
+
+    if (!stillExists) {
+      setActiveCategoryId(effectiveVocabulary.categories[0].id);
+    }
+  }, [effectiveVocabulary, activeCategoryId]);
 
   // ── 4. Preload audio into memory once all assets are cached ─────────────────
   useEffect(() => {
@@ -73,22 +95,42 @@ export default function App() {
     return <LoadingScreen progress={cacheProgress} />;
   }
 
-  const activeCategory = vocabulary.categories.find(
+  const activeCategory = effectiveVocabulary.categories.find(
     (c) => c.id === activeCategoryId
   );
 
+  if (isParentModeOpen) {
+    return (
+      <ParentMode
+        baseConfig={vocabulary}
+        initialOverrides={overrides}
+        onClose={() => setIsParentModeOpen(false)}
+        onApply={setOverrides}
+      />
+    );
+  }
+
   return (
     <div className="app">
+      <button
+        type="button"
+        className="app__parent-launch"
+        onClick={() => setIsParentModeOpen(true)}
+        aria-label="Open parent mode"
+      >
+        Parent Mode
+      </button>
+
       {/* Always-visible key words bar */}
       <KeyWordsBar
-        keyWords={vocabulary.keyWords}
-        items={vocabulary.items}
+        keyWords={effectiveVocabulary.keyWords}
+        items={effectiveVocabulary.items}
         onSelect={handleSelect}
       />
 
       {/* Category navigation */}
       <CategoryNav
-        categories={vocabulary.categories}
+        categories={effectiveVocabulary.categories}
         activeId={activeCategoryId}
         onSelect={setActiveCategoryId}
       />
@@ -97,7 +139,7 @@ export default function App() {
       <main className="app__main">
         <VocabularyGrid
           category={activeCategory}
-          items={vocabulary.items}
+          items={effectiveVocabulary.items}
           onSelect={handleSelect}
         />
       </main>
