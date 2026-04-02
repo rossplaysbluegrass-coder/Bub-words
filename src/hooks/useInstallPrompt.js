@@ -16,7 +16,10 @@ export function useInstallPrompt() {
   const [deferredPrompt, setDeferredPrompt] = useState(null);
 
   useEffect(() => {
+    console.log('[Bub Words] Install prompt: listening for beforeinstallprompt...');
+    
     const handleBeforeInstallPrompt = (e) => {
+      console.log('[Bub Words] Install prompt: beforeinstallprompt fired ✓');
       // Prevent the mini-infobar from appearing on mobile
       e.preventDefault();
       // Stash the event so it can be triggered later
@@ -28,9 +31,16 @@ export function useInstallPrompt() {
 
     // Hide install button if app is already installed
     window.addEventListener('appinstalled', () => {
+      console.log('[Bub Words] App installed via prompt');
       setCanInstall(false);
       setDeferredPrompt(null);
     });
+
+    // Check if app is already running standalone (installed)
+    if (window.navigator.standalone === true) {
+      console.log('[Bub Words] App running in standalone mode (already installed)');
+      setCanInstall(false);
+    }
 
     // Cleanup
     return () => {
@@ -39,13 +49,19 @@ export function useInstallPrompt() {
   }, []);
 
   const promptInstall = async () => {
-    if (!deferredPrompt) return;
+    console.log('[Bub Words] promptInstall called. deferredPrompt:', !!deferredPrompt);
+    if (!deferredPrompt) {
+      console.warn('[Bub Words] No install prompt available');
+      return;
+    }
 
     // Show the install prompt
+    console.log('[Bub Words] Calling deferredPrompt.prompt()...');
     deferredPrompt.prompt();
 
     // Wait for user response
     const choiceResult = await deferredPrompt.userChoice;
+    console.log('[Bub Words] User choice:', choiceResult.outcome);
     if (choiceResult.outcome === 'accepted') {
       console.log('[Bub Words] App installed successfully');
     } else {

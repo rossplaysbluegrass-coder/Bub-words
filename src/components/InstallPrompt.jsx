@@ -9,7 +9,14 @@ import '../styles/InstallPrompt.css';
 export function InstallPrompt() {
   const { canInstall, promptInstall } = useInstallPrompt();
 
-  if (!canInstall) return null;
+  console.log('[Bub Words] InstallPrompt rendered. canInstall:', canInstall);
+
+  if (!canInstall) {
+    console.log('[Bub Words] canInstall is false, button hidden');
+    return null;
+  }
+
+  console.log('[Bub Words] Rendering install button ✓');
 
   return (
     <button
