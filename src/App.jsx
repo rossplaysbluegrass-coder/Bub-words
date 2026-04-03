@@ -118,7 +118,8 @@ export default function App() {
         onClick={() => setIsParentModeOpen(true)}
         aria-label="Open parent mode"
       >
-        Parent Mode
+        <span className="app__parent-launch-icon" aria-hidden="true">⚙</span>
+        <span className="app__parent-launch-label">Parent</span>
       </button>
 
       {/* Always-visible key words bar */}

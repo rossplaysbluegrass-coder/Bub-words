@@ -17,20 +17,55 @@
 
 .app__parent-launch {
   position: fixed;
-  top: 10px;
+  top: calc(var(--keywords-height) + 8px);
   right: 10px;
   z-index: 150;
   min-height: var(--min-tap);
-  border-radius: 10px;
-  border: 1px solid #1e5f95;
-  background: #2c6faf;
-  color: #fff;
+  border-radius: 999px;
+  border: 1px solid #b8c9dc;
+  background: rgba(255, 255, 255, 0.92);
+  color: #2c587f;
   font-weight: 700;
   padding: 8px 12px;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 2px 8px rgba(18, 44, 70, 0.14);
+  backdrop-filter: blur(4px);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .app__parent-launch:focus-visible {
   outline: 3px solid #90caf9;
   outline-offset: 2px;
+}
+
+.app__parent-launch-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.app__parent-launch-label {
+  line-height: 1;
+}
+
+@media (max-width: 720px) {
+  .app__parent-launch {
+    top: auto;
+    bottom: 12px;
+    right: 12px;
+    width: 42px;
+    min-height: 42px;
+    padding: 0;
+    justify-content: center;
+    border-radius: 50%;
+    opacity: 0.82;
+  }
+
+  .app__parent-launch-label {
+    display: none;
+  }
+
+  .app__parent-launch-icon {
+    font-size: 1.1rem;
+  }
 }

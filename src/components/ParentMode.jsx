@@ -516,6 +516,30 @@ export function ParentMode({ baseConfig, initialOverrides, onClose, onApply }) {
     onClose?.();
   };
 
+  const handleClearSettings = () => {
+    const shouldClear = window.confirm(
+      'Clear all Parent Mode settings and restore defaults? This will remove hidden items, custom categories, and ordering changes.'
+    );
+
+    if (!shouldClear) return;
+
+    const cleared = saveOverrides(createEmptyOverrides());
+
+    setDraft(cleared);
+    setSelectedCategoryId('');
+    setIsCreateCategoryOpen(false);
+    setPendingCategoryName('');
+    setIsEditCategoryOpen(false);
+    setItemSearch('');
+    setIsAddItemsOpen(false);
+    setPendingCategoryItems([]);
+    setDraggedItemId('');
+    setDragOverItemId('');
+    setOpenItemMenuId('');
+
+    onApply?.(cleared);
+  };
+
   if (!baseConfig || !effectiveConfig) return null;
 
   if (!unlocked) {
@@ -571,6 +595,9 @@ export function ParentMode({ baseConfig, initialOverrides, onClose, onApply }) {
       <header className="parent-mode__header">
         <h2>Parent Mode</h2>
         <div className="parent-mode__header-actions">
+          <button type="button" onClick={handleClearSettings} className="parent-mode__button parent-mode__button--ghost">
+            Clear settings
+          </button>
           <button type="button" onClick={handleCancel} className="parent-mode__button parent-mode__button--ghost">
             Cancel
           </button>

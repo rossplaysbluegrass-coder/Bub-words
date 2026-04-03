@@ -12,6 +12,9 @@
   height: 100%;
   list-style: none;
   overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }

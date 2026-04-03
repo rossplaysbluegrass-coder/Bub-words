@@ -1,5 +1,21 @@
 {
-  "keyWords": ["more", "help", "stop", "yes", "no", "please"],
+  "keyWords": [
+      "more", 
+      "help", 
+      "stop", 
+      "yes", 
+      "no", 
+      "please", 
+      "thank you", 
+      "sorry", 
+      "hello", 
+      "goodbye", 
+      "I don't know", 
+      "I want", 
+      "I need", 
+      "I like", 
+      "I don't like"
+    ],
 
   "categories": [
     {
@@ -7,28 +23,217 @@
       "name": "🍽️ Food",
       "color": "#E8F5E9",
       "accentColor": "#388E3C",
-      "items": ["apple", "banana", "water", "milk", "bread", "cookie", "sausage"]
+      "items": [
+        "eat", 
+        "drink", 
+        "hungry", 
+        "thirsty", 
+        "apple", 
+        "banana", 
+        "water", 
+        "milk", 
+        "bread", 
+        "cookie", 
+        "sausage", 
+        "yogurt", 
+        "applesauce", 
+        "juice", 
+        "pasta", 
+        "rice", 
+        "fruit", 
+        "vegetable", 
+        "meat", 
+        "snack", 
+        "plate", 
+        "cup", 
+        "bottle", 
+        "spoon", 
+        "fork", 
+        "knife", 
+        "bowl"
+      ]
     },
     {
       "id": "activities",
       "name": "⚽ Activities",
       "color": "#E3F2FD",
       "accentColor": "#1565C0",
-      "items": ["play", "sleep", "read", "draw", "outside", "bath", "jump"]
+      "items": [
+        "play", 
+        "sleep", 
+        "read", 
+        "draw", 
+        "outside", 
+        "bath", 
+        "jump", 
+        "TV", 
+        "music", 
+        "puzzle", 
+        "potty", 
+        "eat", 
+        "drink", 
+        "dress", 
+        "undress", 
+        "change", 
+        "clean", 
+        "wash", 
+        "brush", 
+        "hug", 
+        "kiss", 
+        "dance", 
+        "sing", 
+        "run", 
+        "walk"
+      ]
     },
     {
       "id": "feelings",
       "name": "🙂 Feelings",
       "color": "#FFF3E0",
       "accentColor": "#E65100",
-      "items": ["happy", "sad", "tired", "hurt", "scared", "excited", "angry"]
+      "items": [
+        "happy", 
+        "sad", 
+        "tired", 
+        "hurt", 
+        "scared", 
+        "excited", 
+        "angry", 
+        "love", 
+        "bored", 
+        "sick"
+      ]
     },
     {
       "id": "people",
       "name": "👥 People",
       "color": "#F3E5F5",
       "accentColor": "#6A1B9A",
-      "items": ["mom", "dad", "sister", "friend"]
+      "items": [
+        "mom", 
+        "dad", 
+        "sister", 
+        "brother", 
+        "friend", 
+        "teacher", 
+        "doctor", 
+        "aunt", 
+        "uncle", 
+        "grandma", 
+        "grandpa", 
+        "police", 
+        "neighbor", 
+        "baby", 
+        "child", 
+        "adult"
+      ]
+    },
+    {
+      "id": "objects",
+      "name": "📦 Objects",
+      "color": "#E0F7FA",
+      "accentColor": "#00796B",
+      "items": [
+        "ball", 
+        "car", 
+        "doll", 
+        "book", 
+        "toy", 
+        "chair", 
+        "table", 
+        "cup", 
+        "bottle", 
+        "spoon",
+        "fork", 
+        "knife", 
+        "bowl", 
+        "plate", 
+        "phone", 
+        "TV", 
+        "bed", 
+        "toothbrush", 
+        "shirt", 
+        "pants", 
+        "shoes", 
+        "pajamas",
+        "jacket",
+        "hat", 
+        "bag", 
+        "socks", 
+        "blanket", 
+        "bed",
+        "pillow", 
+        "door", 
+        "window", 
+        "light", 
+        "balloon", 
+        "block", 
+        "crayon", 
+        "paper",
+        "food",
+        "drink"
+      ]
+    },
+    {
+      "id": "animals",
+      "name": "🐾 Animals",
+      "color": "#FBE9E7",
+      "accentColor": "#D84315",
+      "items": [
+        "cat",
+        "dog",
+        "bird",
+        "fish",
+        "cow",
+        "pig",
+        "sheep",
+        "horse",
+        "duck",
+        "chicken",
+        "frog",
+        "rabbit",
+        "bear",
+        "lion",
+        "tiger",
+        "elephant",
+        "monkey",
+        "giraffe",
+        "zebra",
+        "snake"
+      ]
+    },
+    {
+      "id": "colors",
+      "name": "🎨 Colors",
+      "color": "#FFFDE7",
+      "accentColor": "#FBC02D",
+      "items": [
+        "red",
+        "orange",
+        "yellow",
+        "green",
+        "blue",
+        "purple",
+        "pink",
+        "brown",
+        "black",
+        "white",
+        "gray",
+        "rainbow"
+      ]
+    },
+    {
+      "id": "alphabet",
+      "name": "🔤 ABCs",
+      "color": "#E8EAF6",
+      "accentColor": "#3F51B5",
+      "items": [
+        "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", 
+        "K", "L", "M", "N", "O", "P", "Q", "R", "S", 
+        "T", "U", "V", "W", "X", "Y", "Z", 
+        "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
+        "20", "30", "40", "50", "60", "70", "80", "90", "100", "1000"
+      ]
     }
   ],
 
@@ -187,6 +392,841 @@
       "label": "Sausage",
       "image": "/images/sausage.svg",
       "audio": "/audio/sausage.mp3"
+    },
+    "thank you": {
+      "label": "Thank You",
+      "image": "/images/thank-you.svg",
+      "audio": "/audio/thank-you.mp3"
+    },
+    "sorry": {
+      "label": "Sorry",
+      "image": "/images/sorry.svg",
+      "audio": "/audio/sorry.mp3"
+    },
+    "hello": {
+      "label": "Hello",
+      "image": "/images/hello.svg",
+      "audio": "/audio/hello.mp3"
+    },
+    "goodbye": {
+      "label": "Goodbye",
+      "image": "/images/goodbye.svg",
+      "audio": "/audio/goodbye.mp3"
+    },
+    "I don't know": {
+      "label": "I don't know",
+      "image": "/images/i-dont-know.svg",
+      "audio": "/audio/i-dont-know.mp3"
+    },
+    "I want": {
+      "label": "I want",
+      "image": "/images/i-want.svg",
+      "audio": "/audio/i-want.mp3"
+    },
+    "I need": {
+      "label": "I need",
+      "image": "/images/i-need.svg",
+      "audio": "/audio/i-need.mp3"
+    },
+    "I like": {
+      "label": "I like",
+      "image": "/images/i-like.svg",
+      "audio": "/audio/i-like.mp3"
+    },
+    "I don't like": {
+      "label": "I don't like",
+      "image": "/images/i-dont-like.svg",
+      "audio": "/audio/i-dont-like.mp3"
+    },
+    "eat": {
+      "label": "Eat",
+      "image": "/images/eat.svg",
+      "audio": "/audio/eat.mp3"
+    },
+    "drink": {
+      "label": "Drink",
+      "image": "/images/drink.svg",
+      "audio": "/audio/drink.mp3"
+    },
+    "hungry": {
+      "label": "Hungry",
+      "image": "/images/hungry.svg",
+      "audio": "/audio/hungry.mp3"
+    },
+    "thirsty": {
+      "label": "Thirsty",
+      "image": "/images/thirsty.svg",
+      "audio": "/audio/thirsty.mp3"
+    },
+    "yogurt": {
+      "label": "Yogurt",
+      "image": "/images/yogurt.svg",
+      "audio": "/audio/yogurt.mp3"
+    },
+    "applesauce": {
+      "label": "Applesauce",
+      "image": "/images/applesauce.svg",
+      "audio": "/audio/applesauce.mp3"
+    },
+    "juice": {
+      "label": "Juice",
+      "image": "/images/juice.svg",
+      "audio": "/audio/juice.mp3"
+    },
+    "pasta": {
+      "label": "Pasta",
+      "image": "/images/pasta.svg",
+      "audio": "/audio/pasta.mp3"
+    },
+    "rice": {
+      "label": "Rice",
+      "image": "/images/rice.svg",
+      "audio": "/audio/rice.mp3"
+    },
+    "fruit": {
+      "label": "Fruit",
+      "image": "/images/fruit.svg",
+      "audio": "/audio/fruit.mp3"
+    },
+    "vegetable": {
+      "label": "Vegetable",
+      "image": "/images/vegetable.svg",
+      "audio": "/audio/vegetable.mp3"
+    },
+    "meat": {
+      "label": "Meat",
+      "image": "/images/meat.svg",
+      "audio": "/audio/meat.mp3"
+    },
+    "snack": {
+      "label": "Snack",
+      "image": "/images/snack.svg",
+      "audio": "/audio/snack.mp3"
+    },
+    "plate": {
+      "label": "Plate",
+      "image": "/images/plate.svg",
+      "audio": "/audio/plate.mp3"
+    },
+    "cup": {
+      "label": "Cup",
+      "image": "/images/cup.svg",
+      "audio": "/audio/cup.mp3"
+    },
+    "bottle": {
+      "label": "Bottle",
+      "image": "/images/bottle.svg",
+      "audio": "/audio/bottle.mp3"
+    },
+    "spoon": {
+      "label": "Spoon",
+      "image": "/images/spoon.svg",
+      "audio": "/audio/spoon.mp3"
+    },
+    "fork": {
+      "label": "Fork",
+      "image": "/images/fork.svg",
+      "audio": "/audio/fork.mp3"
+    },
+    "knife": {
+      "label": "Knife",
+      "image": "/images/knife.svg",
+      "audio": "/audio/knife.mp3"
+    },
+    "bowl": {
+      "label": "Bowl",
+      "image": "/images/bowl.svg",
+      "audio": "/audio/bowl.mp3"
+    },
+    "TV": {
+      "label": "TV",
+      "image": "/images/tv.svg",
+      "audio": "/audio/tv.mp3"
+    },
+    "music": {
+      "label": "Music",
+      "image": "/images/music.svg",
+      "audio": "/audio/music.mp3"
+    },
+    "puzzle": {
+      "label": "Puzzle",
+      "image": "/images/puzzle.svg",
+      "audio": "/audio/puzzle.mp3"
+    },
+    "potty": {
+      "label": "Potty",
+      "image": "/images/potty.svg",
+      "audio": "/audio/potty.mp3"
+    },
+    "dress": {
+      "label": "Dress",
+      "image": "/images/dress.svg",
+      "audio": "/audio/dress.mp3"
+    },
+    "undress": {
+      "label": "Undress",
+      "image": "/images/undress.svg",
+      "audio": "/audio/undress.mp3"
+    },
+    "change": {
+      "label": "Change",
+      "image": "/images/change.svg",
+      "audio": "/audio/change.mp3"
+    },
+    "clean": {
+      "label": "Clean",
+      "image": "/images/clean.svg",
+      "audio": "/audio/clean.mp3"
+    },
+    "wash": {
+      "label": "Wash",
+      "image": "/images/wash.svg",
+      "audio": "/audio/wash.mp3"
+    },
+    "brush": {
+      "label": "Brush",
+      "image": "/images/brush.svg",
+      "audio": "/audio/brush.mp3"
+    },
+    "hug": {
+      "label": "Hug",
+      "image": "/images/hug.svg",
+      "audio": "/audio/hug.mp3"
+    },
+    "kiss": {
+      "label": "Kiss",
+      "image": "/images/kiss.svg",
+      "audio": "/audio/kiss.mp3"
+    },
+    "dance": {
+      "label": "Dance",
+      "image": "/images/dance.svg",
+      "audio": "/audio/dance.mp3"
+    },
+    "sing": {
+      "label": "Sing",
+      "image": "/images/sing.svg",
+      "audio": "/audio/sing.mp3"
+    },
+    "run": {
+      "label": "Run",
+      "image": "/images/run.svg",
+      "audio": "/audio/run.mp3"
+    },
+    "walk": {
+      "label": "Walk",
+      "image": "/images/walk.svg",
+      "audio": "/audio/walk.mp3"
+    },
+    "love": {
+      "label": "Love",
+      "image": "/images/love.svg",
+      "audio": "/audio/love.mp3"
+    },
+    "bored": {
+      "label": "Bored",
+      "image": "/images/bored.svg",
+      "audio": "/audio/bored.mp3"
+    },
+    "sick": {
+      "label": "Sick",
+      "image": "/images/sick.svg",
+      "audio": "/audio/sick.mp3"
+    },
+    "brother": {
+      "label": "Brother",
+      "image": "/images/brother.svg",
+      "audio": "/audio/brother.mp3"
+    },
+    "teacher": {
+      "label": "Teacher",
+      "image": "/images/teacher.svg",
+      "audio": "/audio/teacher.mp3"
+    },
+    "doctor": {
+      "label": "Doctor",
+      "image": "/images/doctor.svg",
+      "audio": "/audio/doctor.mp3"
+    },
+    "aunt": {
+      "label": "Aunt",
+      "image": "/images/aunt.svg",
+      "audio": "/audio/aunt.mp3"
+    },
+    "uncle": {
+      "label": "Uncle",
+      "image": "/images/uncle.svg",
+      "audio": "/audio/uncle.mp3"
+    },
+    "grandma": {
+      "label": "Grandma",
+      "image": "/images/grandma.svg",
+      "audio": "/audio/grandma.mp3"
+    },
+    "grandpa": {
+      "label": "Grandpa",
+      "image": "/images/grandpa.svg",
+      "audio": "/audio/grandpa.mp3"
+    },
+    "police": {
+      "label": "Police",
+      "image": "/images/police.svg",
+      "audio": "/audio/police.mp3"
+    },
+    "neighbor": {
+      "label": "Neighbor",
+      "image": "/images/neighbor.svg",
+      "audio": "/audio/neighbor.mp3"
+    },
+    "baby": {
+      "label": "Baby",
+      "image": "/images/baby.svg",
+      "audio": "/audio/baby.mp3"
+    },
+    "child": {
+      "label": "Child",
+      "image": "/images/child.svg",
+      "audio": "/audio/child.mp3"
+    },
+    "adult": {
+      "label": "Adult",
+      "image": "/images/adult.svg",
+      "audio": "/audio/adult.mp3"
+    },
+    "ball": {
+      "label": "Ball",
+      "image": "/images/ball.svg",
+      "audio": "/audio/ball.mp3"
+    },
+    "car": {
+      "label": "Car",
+      "image": "/images/car.svg",
+      "audio": "/audio/car.mp3"
+    },
+    "doll": {
+      "label": "Doll",
+      "image": "/images/doll.svg",
+      "audio": "/audio/doll.mp3"
+    },
+    "book": {
+      "label": "Book",
+      "image": "/images/book.svg",
+      "audio": "/audio/book.mp3"
+    },
+    "toy": {
+      "label": "Toy",
+      "image": "/images/toy.svg",
+      "audio": "/audio/toy.mp3"
+    },
+    "chair": {
+      "label": "Chair",
+      "image": "/images/chair.svg",
+      "audio": "/audio/chair.mp3"
+    },
+    "table": {
+      "label": "Table",
+      "image": "/images/table.svg",
+      "audio": "/audio/table.mp3"
+    },
+    "phone": {
+      "label": "Phone",
+      "image": "/images/phone.svg",
+      "audio": "/audio/phone.mp3"
+    },
+    "bed": {
+      "label": "Bed",
+      "image": "/images/bed.svg",
+      "audio": "/audio/bed.mp3"
+    },
+    "toothbrush": {
+      "label": "Toothbrush",
+      "image": "/images/toothbrush.svg",
+      "audio": "/audio/toothbrush.mp3"
+    },
+    "shirt": {
+      "label": "Shirt",
+      "image": "/images/shirt.svg",
+      "audio": "/audio/shirt.mp3"
+    },
+    "pants": {
+      "label": "Pants",
+      "image": "/images/pants.svg",
+      "audio": "/audio/pants.mp3"
+    },
+    "shoes": {
+      "label": "Shoes",
+      "image": "/images/shoes.svg",
+      "audio": "/audio/shoes.mp3"
+    },
+    "pajamas": {
+      "label": "Pajamas",
+      "image": "/images/pajamas.svg",
+      "audio": "/audio/pajamas.mp3"
+    },
+    "jacket": {
+      "label": "Jacket",
+      "image": "/images/jacket.svg",
+      "audio": "/audio/jacket.mp3"
+    },
+    "hat": {
+      "label": "Hat",
+      "image": "/images/hat.svg",
+      "audio": "/audio/hat.mp3"
+    },
+    "bag": {
+      "label": "Bag",
+      "image": "/images/bag.svg",
+      "audio": "/audio/bag.mp3"
+    },
+    "socks": {
+      "label": "Socks",
+      "image": "/images/socks.svg",
+      "audio": "/audio/socks.mp3"
+    },
+    "blanket": {
+      "label": "Blanket",
+      "image": "/images/blanket.svg",
+      "audio": "/audio/blanket.mp3"
+    },
+    "pillow": {
+      "label": "Pillow",
+      "image": "/images/pillow.svg",
+      "audio": "/audio/pillow.mp3"
+    },
+    "door": {
+      "label": "Door",
+      "image": "/images/door.svg",
+      "audio": "/audio/door.mp3"
+    },
+    "window": {
+      "label": "Window",
+      "image": "/images/window.svg",
+      "audio": "/audio/window.mp3"
+    },
+    "light": {
+      "label": "Light",
+      "image": "/images/light.svg",
+      "audio": "/audio/light.mp3"
+    },
+    "balloon": {
+      "label": "Balloon",
+      "image": "/images/balloon.svg",
+      "audio": "/audio/balloon.mp3"
+    },
+    "block": {
+      "label": "Block",
+      "image": "/images/block.svg",
+      "audio": "/audio/block.mp3"
+    },
+    "crayon": {
+      "label": "Crayon",
+      "image": "/images/crayon.svg",
+      "audio": "/audio/crayon.mp3"
+    },
+    "paper": {
+      "label": "Paper",
+      "image": "/images/paper.svg",
+      "audio": "/audio/paper.mp3"
+    },
+    "food": {
+      "label": "Food",
+      "image": "/images/food.svg",
+      "audio": "/audio/food.mp3"
+    },
+    "cat": {
+      "label": "Cat",
+      "image": "/images/cat.svg",
+      "audio": "/audio/cat.mp3"
+    },
+    "dog": {
+      "label": "Dog",
+      "image": "/images/dog.svg",
+      "audio": "/audio/dog.mp3"
+    },
+    "bird": {
+      "label": "Bird",
+      "image": "/images/bird.svg",
+      "audio": "/audio/bird.mp3"
+    },
+    "fish": {
+      "label": "Fish",
+      "image": "/images/fish.svg",
+      "audio": "/audio/fish.mp3"
+    },
+    "cow": {
+      "label": "Cow",
+      "image": "/images/cow.svg",
+      "audio": "/audio/cow.mp3"
+    },
+    "pig": {
+      "label": "Pig",
+      "image": "/images/pig.svg",
+      "audio": "/audio/pig.mp3"
+    },
+    "sheep": {
+      "label": "Sheep",
+      "image": "/images/sheep.svg",
+      "audio": "/audio/sheep.mp3"
+    },
+    "horse": {
+      "label": "Horse",
+      "image": "/images/horse.svg",
+      "audio": "/audio/horse.mp3"
+    },
+    "duck": {
+      "label": "Duck",
+      "image": "/images/duck.svg",
+      "audio": "/audio/duck.mp3"
+    },
+    "chicken": {
+      "label": "Chicken",
+      "image": "/images/chicken.svg",
+      "audio": "/audio/chicken.mp3"
+    },
+    "frog": {
+      "label": "Frog",
+      "image": "/images/frog.svg",
+      "audio": "/audio/frog.mp3"
+    },
+    "rabbit": {
+      "label": "Rabbit",
+      "image": "/images/rabbit.svg",
+      "audio": "/audio/rabbit.mp3"
+    },
+    "bear": {
+      "label": "Bear",
+      "image": "/images/bear.svg",
+      "audio": "/audio/bear.mp3"
+    },
+    "lion": {
+      "label": "Lion",
+      "image": "/images/lion.svg",
+      "audio": "/audio/lion.mp3"
+    },
+    "tiger": {
+      "label": "Tiger",
+      "image": "/images/tiger.svg",
+      "audio": "/audio/tiger.mp3"
+    },
+    "elephant": {
+      "label": "Elephant",
+      "image": "/images/elephant.svg",
+      "audio": "/audio/elephant.mp3"
+    },
+    "monkey": {
+      "label": "Monkey",
+      "image": "/images/monkey.svg",
+      "audio": "/audio/monkey.mp3"
+    },
+    "giraffe": {
+      "label": "Giraffe",
+      "image": "/images/giraffe.svg",
+      "audio": "/audio/giraffe.mp3"
+    },
+    "zebra": {
+      "label": "Zebra",
+      "image": "/images/zebra.svg",
+      "audio": "/audio/zebra.mp3"
+    },
+    "snake": {
+      "label": "Snake",
+      "image": "/images/snake.svg",
+      "audio": "/audio/snake.mp3"
+    },
+    "red": {
+      "label": "Red",
+      "image": "/images/red.svg",
+      "audio": "/audio/red.mp3"
+    },
+    "orange": {
+      "label": "Orange",
+      "image": "/images/orange.svg",
+      "audio": "/audio/orange.mp3"
+    },
+    "yellow": {
+      "label": "Yellow",
+      "image": "/images/yellow.svg",
+      "audio": "/audio/yellow.mp3"
+    },
+    "green": {
+      "label": "Green",
+      "image": "/images/green.svg",
+      "audio": "/audio/green.mp3"
+    },
+    "blue": {
+      "label": "Blue",
+      "image": "/images/blue.svg",
+      "audio": "/audio/blue.mp3"
+    },
+    "purple": {
+      "label": "Purple",
+      "image": "/images/purple.svg",
+      "audio": "/audio/purple.mp3"
+    },
+    "pink": {
+      "label": "Pink",
+      "image": "/images/pink.svg",
+      "audio": "/audio/pink.mp3"
+    },
+    "brown": {
+      "label": "Brown",
+      "image": "/images/brown.svg",
+      "audio": "/audio/brown.mp3"
+    },
+    "black": {
+      "label": "Black",
+      "image": "/images/black.svg",
+      "audio": "/audio/black.mp3"
+    },
+    "white": {
+      "label": "White",
+      "image": "/images/white.svg",
+      "audio": "/audio/white.mp3"
+    },
+    "gray": {
+      "label": "Gray",
+      "image": "/images/gray.svg",
+      "audio": "/audio/gray.mp3"
+    },
+    "rainbow": {
+      "label": "Rainbow",
+      "image": "/images/rainbow.svg",
+      "audio": "/audio/rainbow.mp3"
+    },
+    "A": {
+      "label": "A",
+      "image": "/images/a.svg",
+      "audio": "/audio/a.mp3"
+    },
+    "B": {
+      "label": "B",
+      "image": "/images/b.svg",
+      "audio": "/audio/b.mp3"
+    },
+    "C": {
+      "label": "C",
+      "image": "/images/c.svg",
+      "audio": "/audio/c.mp3"
+    },
+    "D": {
+      "label": "D",
+      "image": "/images/d.svg",
+      "audio": "/audio/d.mp3"
+    },
+    "E": {
+      "label": "E",
+      "image": "/images/e.svg",
+      "audio": "/audio/e.mp3"
+    },
+    "F": {
+      "label": "F",
+      "image": "/images/f.svg",
+      "audio": "/audio/f.mp3"
+    },
+    "G": {
+      "label": "G",
+      "image": "/images/g.svg",
+      "audio": "/audio/g.mp3"
+    },
+    "H": {
+      "label": "H",
+      "image": "/images/h.svg",
+      "audio": "/audio/h.mp3"
+    },
+    "I": {
+      "label": "I",
+      "image": "/images/i.svg",
+      "audio": "/audio/i.mp3"
+    },
+    "J": {
+      "label": "J",
+      "image": "/images/j.svg",
+      "audio": "/audio/j.mp3"
+    },
+    "K": {
+      "label": "K",
+      "image": "/images/k.svg",
+      "audio": "/audio/k.mp3"
+    },
+    "L": {
+      "label": "L",
+      "image": "/images/l.svg",
+      "audio": "/audio/l.mp3"
+    },
+    "M": {
+      "label": "M",
+      "image": "/images/m.svg",
+      "audio": "/audio/m.mp3"
+    },
+    "N": {
+      "label": "N",
+      "image": "/images/n.svg",
+      "audio": "/audio/n.mp3"
+    },
+    "O": {
+      "label": "O",
+      "image": "/images/o.svg",
+      "audio": "/audio/o.mp3"
+    },
+    "P": {
+      "label": "P",
+      "image": "/images/p.svg",
+      "audio": "/audio/p.mp3"
+    },
+    "Q": {
+      "label": "Q",
+      "image": "/images/q.svg",
+      "audio": "/audio/q.mp3"
+    },
+    "R": {
+      "label": "R",
+      "image": "/images/r.svg",
+      "audio": "/audio/r.mp3"
+    },
+    "S": {
+      "label": "S",
+      "image": "/images/s.svg",
+      "audio": "/audio/s.mp3"
+    },
+    "T": {
+      "label": "T",
+      "image": "/images/t.svg",
+      "audio": "/audio/t.mp3"
+    },
+    "U": {
+      "label": "U",
+      "image": "/images/u.svg",
+      "audio": "/audio/u.mp3"
+    },
+    "V": {
+      "label": "V",
+      "image": "/images/v.svg",
+      "audio": "/audio/v.mp3"
+    },
+    "W": {
+      "label": "W",
+      "image": "/images/w.svg",
+      "audio": "/audio/w.mp3"
+    },
+    "X": {
+      "label": "X",
+      "image": "/images/x.svg",
+      "audio": "/audio/x.mp3"
+    },
+    "Y": {
+      "label": "Y",
+      "image": "/images/y.svg",
+      "audio": "/audio/y.mp3"
+    },
+    "Z": {
+      "label": "Z",
+      "image": "/images/z.svg",
+      "audio": "/audio/z.mp3"
+    },
+    "0": {
+      "label": "0",
+      "image": "/images/0.svg",
+      "audio": "/audio/0.mp3"
+    },
+    "1": {
+      "label": "1",
+      "image": "/images/1.svg",
+      "audio": "/audio/1.mp3"
+    },
+    "2": {
+      "label": "2",
+      "image": "/images/2.svg",
+      "audio": "/audio/2.mp3"
+    },
+    "3": {
+      "label": "3",
+      "image": "/images/3.svg",
+      "audio": "/audio/3.mp3"
+    },
+    "4": {
+      "label": "4",
+      "image": "/images/4.svg",
+      "audio": "/audio/4.mp3"
+    },
+    "5": {
+      "label": "5",
+      "image": "/images/5.svg",
+      "audio": "/audio/5.mp3"
+    },
+    "6": {
+      "label": "6",
+      "image": "/images/6.svg",
+      "audio": "/audio/6.mp3"
+    },
+    "7": {
+      "label": "7",
+      "image": "/images/7.svg",
+      "audio": "/audio/7.mp3"
+    },
+    "8": {
+      "label": "8",
+      "image": "/images/8.svg",
+      "audio": "/audio/8.mp3"
+    },
+    "9": {
+      "label": "9",
+      "image": "/images/9.svg",
+      "audio": "/audio/9.mp3"
+    },
+    "10": {
+      "label": "10",
+      "image": "/images/10.svg",
+      "audio": "/audio/10.mp3"
+    },
+    "20": {
+      "label": "20",
+      "image": "/images/20.svg",
+      "audio": "/audio/20.mp3"
+    },
+    "30": {
+      "label": "30",
+      "image": "/images/30.svg",
+      "audio": "/audio/30.mp3"
+    },
+    "40": {
+      "label": "40",
+      "image": "/images/40.svg",
+      "audio": "/audio/40.mp3"
+    },
+    "50": {
+      "label": "50",
+      "image": "/images/50.svg",
+      "audio": "/audio/50.mp3"
+    },
+    "60": {
+      "label": "60",
+      "image": "/images/60.svg",
+      "audio": "/audio/60.mp3"
+    },
+    "70": {
+      "label": "70",
+      "image": "/images/70.svg",
+      "audio": "/audio/70.mp3"
+    },
+    "80": {
+      "label": "80",
+      "image": "/images/80.svg",
+      "audio": "/audio/80.mp3"
+    },
+    "90": {
+      "label": "90",
+      "image": "/images/90.svg",
+      "audio": "/audio/90.mp3"
+    },
+    "100": {
+      "label": "100",
+      "image": "/images/100.svg",
+      "audio": "/audio/100.mp3"
+    },
+    "1000": {
+      "label": "1000",
+      "image": "/images/1000.svg",
+      "audio": "/audio/1000.mp3"
     }
   }
 }
