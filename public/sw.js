@@ -103,6 +103,11 @@ self.addEventListener('fetch', (event) => {
  * Responds with progress events via BroadcastChannel.
  */
 self.addEventListener('message', (event) => {
+  if (event.data?.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+    return;
+  }
+
   if (event.data?.type !== 'CACHE_ASSETS') return;
 
   const { urls } = event.data;

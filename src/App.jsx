@@ -8,6 +8,7 @@ import { CategoryNav } from './components/CategoryNav.jsx';
 import { VocabularyGrid } from './components/VocabularyGrid.jsx';
 import { ParentMode } from './components/ParentMode.jsx';
 import { InstallPrompt } from './components/InstallPrompt.jsx';
+import { UpdatePrompt } from './components/UpdatePrompt.jsx';
 import { applyOverrides, loadOverrides } from './utils/vocabularyOverrides.js';
 import './styles/App.css';
 
@@ -24,7 +25,15 @@ import './styles/App.css';
 export default function App() {
   const { vocabulary, loading: vocabLoading } = useVocabulary();
   const { play, preloadAll } = useAudio();
-  const { swReady, cacheProgress, cacheComplete, triggerCache } =
+  const {
+    swReady,
+    cacheProgress,
+    cacheComplete,
+    triggerCache,
+    updateAvailable,
+    applyUpdate,
+    isApplyingUpdate,
+  } =
     useServiceWorker();
 
   const [overrides, setOverrides] = useState(() => loadOverrides());
@@ -147,6 +156,9 @@ export default function App() {
 
       {/* Install app button — one-tap, appears only on installable devices */}
       <InstallPrompt />
+
+      {/* One-tap update when a new service worker is waiting */}
+      <UpdatePrompt show={updateAvailable} onUpdate={applyUpdate} isUpdating={isApplyingUpdate} />
     </div>
   );
 }

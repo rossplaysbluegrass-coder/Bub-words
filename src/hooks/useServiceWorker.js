@@ -13,6 +13,9 @@ export function useServiceWorker() {
   const [swReady, setSwReady] = useState(false);
   const [cacheProgress, setCacheProgress] = useState(null);
   const [cacheComplete, setCacheComplete] = useState(false);
+  const [updateAvailable, setUpdateAvailable] = useState(false);
+  const [waitingWorker, setWaitingWorker] = useState(null);
+  const [isApplyingUpdate, setIsApplyingUpdate] = useState(false);
 
   // Register the SW and listen for cache progress via BroadcastChannel
   useEffect(() => {
@@ -35,13 +38,33 @@ export function useServiceWorker() {
       }
     });
 
+    let cleanupRegistration = () => {};
+    const onControllerChange = () => {
+      setSwReady(true);
+    };
+
     navigator.serviceWorker
       .register('/sw.js', { scope: '/' })
       .then((registration) => {
-        const sw =
-          registration.active ||
-          registration.installing ||
-          registration.waiting;
+        if (registration.waiting) {
+          setWaitingWorker(registration.waiting);
+          setUpdateAvailable(true);
+        }
+
+        registration.addEventListener('updatefound', () => {
+          const installingWorker = registration.installing;
+          if (!installingWorker) return;
+
+          installingWorker.addEventListener('statechange', () => {
+            if (
+              installingWorker.state === 'installed' &&
+              navigator.serviceWorker.controller
+            ) {
+              setWaitingWorker(registration.waiting || installingWorker);
+              setUpdateAvailable(true);
+            }
+          });
+        });
 
         if (registration.active) {
           setSwReady(true);
@@ -59,9 +82,23 @@ export function useServiceWorker() {
         }
 
         // Also catch SW taking control via clients.claim()
-        navigator.serviceWorker.addEventListener('controllerchange', () => {
-          setSwReady(true);
-        });
+        navigator.serviceWorker.addEventListener('controllerchange', onControllerChange);
+
+        const checkForUpdates = () => registration.update().catch(() => {});
+        const periodicTimer = window.setInterval(checkForUpdates, 30 * 60 * 1000);
+        const onVisible = () => {
+          if (document.visibilityState === 'visible') {
+            checkForUpdates();
+          }
+        };
+
+        document.addEventListener('visibilitychange', onVisible);
+
+        cleanupRegistration = () => {
+          window.clearInterval(periodicTimer);
+          document.removeEventListener('visibilitychange', onVisible);
+          navigator.serviceWorker.removeEventListener('controllerchange', onControllerChange);
+        };
       })
       .catch((err) => {
         console.warn('SW registration failed:', err);
@@ -79,6 +116,7 @@ export function useServiceWorker() {
     }, 10_000);
 
     return () => {
+      cleanupRegistration();
       channel.close();
       clearTimeout(fallbackTimer);
     };
@@ -101,5 +139,53 @@ export function useServiceWorker() {
     });
   }, []);
 
-  return { swReady, cacheProgress, cacheComplete, triggerCache };
+  const applyUpdate = useCallback(() => {
+    setIsApplyingUpdate(true);
+
+    if (!('serviceWorker' in navigator)) {
+      window.location.reload();
+      return;
+    }
+
+    const reloadOnce = () => {
+      navigator.serviceWorker.removeEventListener('controllerchange', reloadOnce);
+      window.clearTimeout(fallbackReload);
+      window.location.reload();
+    };
+
+    navigator.serviceWorker.addEventListener('controllerchange', reloadOnce);
+
+    const fallbackReload = window.setTimeout(() => {
+      navigator.serviceWorker.removeEventListener('controllerchange', reloadOnce);
+      window.location.reload();
+    }, 2000);
+
+    const sendSkipWaiting = (worker) => {
+      if (!worker) {
+        setIsApplyingUpdate(false);
+        return;
+      }
+
+      worker.postMessage({ type: 'SKIP_WAITING' });
+    };
+
+    if (waitingWorker) {
+      sendSkipWaiting(waitingWorker);
+      return;
+    }
+
+    navigator.serviceWorker.getRegistration('/').then((registration) => {
+      sendSkipWaiting(registration?.waiting);
+    });
+  }, [waitingWorker]);
+
+  return {
+    swReady,
+    cacheProgress,
+    cacheComplete,
+    triggerCache,
+    updateAvailable,
+    applyUpdate,
+    isApplyingUpdate,
+  };
 }
