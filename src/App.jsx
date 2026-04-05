@@ -138,21 +138,23 @@ export default function App() {
         onSelect={handleSelect}
       />
 
-      {/* Category navigation */}
-      <CategoryNav
-        categories={effectiveVocabulary.categories}
-        activeId={activeCategoryId}
-        onSelect={setActiveCategoryId}
-      />
+      <div className="app__content">
+        {/* Vocabulary grid for the active category */}
+        <main className="app__main">
+          <VocabularyGrid
+            category={activeCategory}
+            items={effectiveVocabulary.items}
+            onSelect={handleSelect}
+          />
+        </main>
 
-      {/* Vocabulary grid for the active category */}
-      <main className="app__main">
-        <VocabularyGrid
-          category={activeCategory}
-          items={effectiveVocabulary.items}
-          onSelect={handleSelect}
+        {/* Category navigation */}
+        <CategoryNav
+          categories={effectiveVocabulary.categories}
+          activeId={activeCategoryId}
+          onSelect={setActiveCategoryId}
         />
-      </main>
+      </div>
 
       {/* Install app button — one-tap, appears only on installable devices */}
       <InstallPrompt />

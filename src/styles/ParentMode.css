@@ -103,8 +103,6 @@
   gap: 8px;
 }
 
-.parent-mode__list--compact {}
-
 .parent-mode__list-row {
   display: flex;
   align-items: center;

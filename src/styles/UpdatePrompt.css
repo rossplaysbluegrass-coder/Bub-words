@@ -1,6 +1,6 @@
 .update-prompt {
   position: fixed;
-  bottom: 16px;
+  bottom: calc(var(--category-nav-height) + 16px + env(safe-area-inset-bottom, 0px));
   left: 16px;
   min-height: var(--min-tap);
   padding: 10px 16px;
@@ -51,9 +51,15 @@
 
 @media (max-width: 480px) {
   .update-prompt {
-    bottom: 12px;
+    bottom: calc(var(--category-nav-height) + 12px + env(safe-area-inset-bottom, 0px));
     left: 12px;
     padding: 10px 14px;
     font-size: 0.9rem;
+  }
+}
+
+@media (orientation: landscape) {
+  .update-prompt {
+    bottom: 16px;
   }
 }

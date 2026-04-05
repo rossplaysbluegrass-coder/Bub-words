@@ -1,12 +1,55 @@
 /* ── Keywords bar ────────────────────────────────────────────────────────── */
 .keywords-bar {
+  position: relative;
   flex-shrink: 0;
   height: var(--keywords-height);
   background: var(--color-surface);
   border-bottom: 2px solid var(--color-border);
   box-shadow: var(--shadow-sm);
-  padding: clamp(6px, 1.8vw, 10px) clamp(8px, 2.6vw, 14px);
+  padding: clamp(6px, 1.8vw, 10px) clamp(8px, 2.6vw, 14px) 14px;
   z-index: 10;
+}
+
+.keywords-bar::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  right: 0;
+  width: 24px;
+  height: calc(100% - 24px);
+  pointer-events: none;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), var(--color-surface));
+}
+
+.keywords-bar__scroll-indicator {
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 4px;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(74, 144, 217, 0.18);
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 1;
+  transition: opacity 0.18s ease;
+}
+
+.keywords-bar__scroll-indicator--hidden {
+  opacity: 0;
+}
+
+.keywords-bar__scroll-thumb {
+  position: absolute;
+  top: 0;
+  left: var(--keywords-scroll-thumb-offset, 0%);
+  display: block;
+  width: var(--keywords-scroll-thumb-size, 28%);
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #6fb1f0, #2c6faf);
+  opacity: 0.95;
+  transition: left 0.08s linear, width 0.08s linear, height 0.08s linear, top 0.08s linear;
 }
 
 .keywords-bar__list {
@@ -34,3 +77,59 @@
   height: 100%;
   scroll-snap-align: start;
 }
+
+@media (orientation: landscape) {
+  .keywords-bar {
+    width: clamp(104px, 18vw, 128px);
+    height: 100%;
+    border-bottom: none;
+    border-right: 2px solid var(--color-border);
+    padding: 8px 14px 8px 8px;
+  }
+
+  .keywords-bar::after {
+    top: auto;
+    bottom: 0;
+    right: 10px;
+    width: calc(100% - 24px);
+    height: 28px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), var(--color-surface));
+  }
+
+  .keywords-bar__scroll-indicator {
+    top: 8px;
+    bottom: 8px;
+    right: 4px;
+    left: auto;
+    width: 4px;
+    height: auto;
+  }
+
+  .keywords-bar__scroll-thumb {
+    top: var(--keywords-scroll-thumb-offset, 0%);
+    left: 0;
+    width: 100%;
+    height: var(--keywords-scroll-thumb-size, 28%);
+    background: linear-gradient(180deg, #6fb1f0, #2c6faf);
+  }
+
+  .keywords-bar__list {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-snap-type: y proximity;
+    touch-action: pan-y;
+  }
+
+  .keywords-bar__item {
+    width: 100%;
+    height: auto;
+  }
+
+  .keywords-bar__item .vocab-item--keyword {
+    width: 100%;
+  }
+}
+
