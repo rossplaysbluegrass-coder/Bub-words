@@ -46,11 +46,11 @@ img {
   --color-text: #1a1a1a;
   --color-text-muted: #5a6a7a;
 
-  --keywords-height: clamp(96px, 16vw, 118px);
+  --keywords-height: clamp(104px, 20vw, 126px);
   --category-nav-height: clamp(48px, 8vw, 56px);
   --keyword-tile-width: clamp(88px, 24vw, 112px);
-  --keyword-tile-height: clamp(84px, 22vw, 98px);
-  --keyword-image-size: clamp(44px, 12vw, 56px);
+  --keyword-tile-height: clamp(88px, 24vw, 102px);
+  --keyword-image-size: clamp(46px, 13vw, 58px);
   --grid-tile-height: clamp(142px, 24vw, 168px);
   --border-radius: 16px;
   --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
@@ -58,6 +58,15 @@ img {
 
   /* Minimum tap target size per WCAG 2.5.5 */
   --min-tap: 48px;
+}
+
+@media (orientation: portrait) and (max-width: 720px) {
+  :root {
+    --keywords-height: clamp(118px, 28vw, 144px);
+    --keyword-tile-width: clamp(92px, 26vw, 116px);
+    --keyword-tile-height: clamp(96px, 26vw, 112px);
+    --keyword-image-size: clamp(50px, 14vw, 62px);
+  }
 }
 
 /* ── High-contrast media query ───────────────────────────────────────────── */

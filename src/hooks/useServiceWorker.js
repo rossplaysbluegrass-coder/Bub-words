@@ -41,6 +41,8 @@ export function useServiceWorker() {
     let cleanupRegistration = () => {};
     const onControllerChange = () => {
       setSwReady(true);
+      setUpdateAvailable(false);
+      setWaitingWorker(null);
     };
 
     navigator.serviceWorker
@@ -85,6 +87,7 @@ export function useServiceWorker() {
         navigator.serviceWorker.addEventListener('controllerchange', onControllerChange);
 
         const checkForUpdates = () => registration.update().catch(() => {});
+        checkForUpdates();
         const periodicTimer = window.setInterval(checkForUpdates, 30 * 60 * 1000);
         const onVisible = () => {
           if (document.visibilityState === 'visible') {

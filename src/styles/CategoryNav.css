@@ -1,10 +1,41 @@
 /* ── Category navigation bar ─────────────────────────────────────────────── */
 .category-nav {
+  position: relative;
   flex-shrink: 0;
   height: var(--category-nav-height);
   background: var(--color-surface);
   border-top: 1px solid var(--color-border);
-  padding-bottom: env(safe-area-inset-bottom, 0px);
+  padding: 0 0 env(safe-area-inset-bottom, 0px);
+}
+
+.category-nav__scroll-indicator {
+  position: absolute;
+  left: 8px;
+  right: 72px;
+  bottom: 4px;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(74, 144, 217, 0.18);
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 1;
+  transition: opacity 0.18s ease;
+}
+
+.category-nav__scroll-indicator--hidden {
+  opacity: 0;
+}
+
+.category-nav__scroll-thumb {
+  position: absolute;
+  top: 0;
+  left: var(--category-scroll-thumb-offset, 0%);
+  display: block;
+  width: var(--category-scroll-thumb-size, 28%);
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #6fb1f0, #2c6faf);
+  transition: left 0.08s linear, width 0.08s linear, height 0.08s linear, top 0.08s linear;
 }
 
 .category-nav__list {
@@ -69,6 +100,23 @@
     padding-bottom: 0;
   }
 
+  .category-nav__scroll-indicator {
+    top: 8px;
+    right: 4px;
+    bottom: 72px;
+    left: auto;
+    width: 4px;
+    height: auto;
+  }
+
+  .category-nav__scroll-thumb {
+    top: var(--category-scroll-thumb-offset, 0%);
+    left: 0;
+    width: 100%;
+    height: var(--category-scroll-thumb-size, 28%);
+    background: linear-gradient(180deg, #6fb1f0, #2c6faf);
+  }
+
   .category-nav__list {
     flex-direction: column;
     height: 100%;
@@ -100,4 +148,3 @@
     border-bottom-color: transparent;
   }
 }
-

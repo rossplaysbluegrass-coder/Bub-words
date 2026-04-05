@@ -3,15 +3,15 @@
  *
  * Strategy:
  *  - Install: pre-cache the app shell (HTML + manifest)
- *  - Runtime caching: cache-first for all app assets (images, audio, JS, CSS)
+ *  - Runtime caching: network-first for app shell/config, cache-first for media
  *  - Message channel: respond to "CACHE_ASSETS" message from the app to
  *    pre-cache all vocabulary assets and report progress
  *  - Activate: delete stale caches from previous versions
  */
 
-// Increment this whenever you replace existing asset files (images/audio).
-// Adding new files doesn't require a bump — only replacing existing ones.
-const CACHE_VERSION = 'v3';
+// Increment this whenever you change the service worker or want to invalidate
+// older cached shell/config data on installed devices.
+const CACHE_VERSION = 'v4';
 const SHELL_CACHE = `freeaac-shell-${CACHE_VERSION}`;
 const ASSET_CACHE = `freeaac-assets-${CACHE_VERSION}`;
 
@@ -29,7 +29,6 @@ self.addEventListener('install', (event) => {
     caches
       .open(SHELL_CACHE)
       .then((cache) => cache.addAll(APP_SHELL_URLS))
-      .then(() => self.skipWaiting())
   );
 });
 
@@ -51,7 +50,7 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// ─── Fetch (cache-first) ─────────────────────────────────────────────────────
+// ─── Fetch ──────────────────────────────────────────────────────────────────
 
 self.addEventListener('fetch', (event) => {
   const { request } = event;
@@ -61,40 +60,75 @@ self.addEventListener('fetch', (event) => {
 
   const url = new URL(request.url);
 
-  // Navigation requests: return cached shell (SPA support)
+  // Navigation requests: prefer network so installed PWAs pick up new builds.
   if (request.mode === 'navigate') {
-    event.respondWith(
-      caches.match('/').then((cached) => cached || fetch(request))
-    );
+    event.respondWith(networkFirstShell(request));
     return;
   }
 
-  // All other requests: cache-first, falling back to network → then cache
-  event.respondWith(
-    caches.match(request).then((cached) => {
-      if (cached) return cached;
+  // Config/manifest should refresh from network when online, but still work offline.
+  if (
+    url.origin === self.location.origin &&
+    (url.pathname === '/config/vocabulary.json' || url.pathname === '/manifest.json')
+  ) {
+    event.respondWith(networkFirstCache(request, SHELL_CACHE));
+    return;
+  }
 
-      return fetch(request).then((response) => {
-        if (!response || response.status !== 200 || response.type === 'error') {
-          return response;
-        }
+  // Media and built assets: cache-first for instant offline usage.
+  const cacheToUse =
+    url.pathname.startsWith('/images/') ||
+    url.pathname.startsWith('/audio/')
+      ? ASSET_CACHE
+      : SHELL_CACHE;
 
-        // Determine which cache to store in
-        const cacheToUse =
-          url.pathname.startsWith('/images/') ||
-          url.pathname.startsWith('/audio/')
-            ? ASSET_CACHE
-            : SHELL_CACHE;
-
-        caches.open(cacheToUse).then((cache) => {
-          cache.put(request, response.clone());
-        });
-
-        return response;
-      });
-    })
-  );
+  event.respondWith(cacheFirst(request, cacheToUse));
 });
+
+async function networkFirstShell(request) {
+  try {
+    const response = await fetch(request);
+
+    if (response && response.ok) {
+      const cache = await caches.open(SHELL_CACHE);
+      await cache.put('/', response.clone());
+      return response;
+    }
+
+    return response;
+  } catch {
+    return (await caches.match('/')) || Response.error();
+  }
+}
+
+async function networkFirstCache(request, cacheName) {
+  try {
+    const response = await fetch(request);
+
+    if (response && response.ok) {
+      const cache = await caches.open(cacheName);
+      await cache.put(request, response.clone());
+    }
+
+    return response;
+  } catch {
+    return (await caches.match(request)) || Response.error();
+  }
+}
+
+async function cacheFirst(request, cacheName) {
+  const cached = await caches.match(request);
+  if (cached) return cached;
+
+  const response = await fetch(request);
+  if (!response || response.status !== 200 || response.type === 'error') {
+    return response;
+  }
+
+  const cache = await caches.open(cacheName);
+  await cache.put(request, response.clone());
+  return response;
+}
 
 // ─── Message: CACHE_ASSETS ───────────────────────────────────────────────────
 /**
