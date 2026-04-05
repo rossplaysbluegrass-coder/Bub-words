@@ -310,7 +310,7 @@
     },
     "read": {
       "label": "Read",
-      "image": "/images/read.svg",
+      "image": "/images/book.svg",
       "audio": "/audio/read.mp3"
     },
     "draw": {

@@ -1,0 +1,11 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title">
+  <title>Rainbow</title>
+  <rect width="256" height="256" rx="36" fill="#F7FBFF"/>
+  <rect x="12" y="12" width="232" height="232" rx="30" fill="none" stroke="#B3D4FC" stroke-width="8"/>
+  <path d="M48 176a80 80 0 0 1 160 0" fill="none" stroke="#E53935" stroke-width="14" stroke-linecap="round"/>
+  <path d="M64 176a64 64 0 0 1 128 0" fill="none" stroke="#FB8C00" stroke-width="14" stroke-linecap="round"/>
+  <path d="M80 176a48 48 0 0 1 96 0" fill="none" stroke="#FDD835" stroke-width="14" stroke-linecap="round"/>
+  <path d="M96 176a32 32 0 0 1 64 0" fill="none" stroke="#43A047" stroke-width="14" stroke-linecap="round"/>
+  <path d="M112 176a16 16 0 0 1 32 0" fill="none" stroke="#1E88E5" stroke-width="14" stroke-linecap="round"/>
+  </svg>
+
