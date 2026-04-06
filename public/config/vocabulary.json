@@ -234,6 +234,32 @@
         "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
         "20", "30", "40", "50", "60", "70", "80", "90", "100", "1000"
       ]
+    },
+    {
+      "id": "body parts",
+      "name": "🧍 Body Parts",
+      "color": "#FFE0B2",
+      "accentColor": "#FF6F00",
+      "items": [
+        "head",
+        "eyes",
+        "ears",
+        "nose",
+        "mouth",
+        "arms",
+        "hands",
+        "fingers",
+        "legs",
+        "feet",
+        "toes",
+        "belly",
+        "back",
+        "shoulders",
+        "knees",
+        "elbows",
+        "chest",
+        "neck"
+      ]
     }
   ],
 
@@ -1227,6 +1253,96 @@
       "label": "1000",
       "image": "/images/1000.svg",
       "audio": "/audio/1000.mp3"
+    },
+    "head": {
+      "label": "Head",
+      "image": "/images/head.svg",
+      "audio": "/audio/head.mp3"
+    },
+    "eyes": {
+      "label": "Eyes",
+      "image": "/images/eyes.svg",
+      "audio": "/audio/eyes.mp3"
+    },
+    "ears": {
+      "label": "Ears",
+      "image": "/images/ears.svg",
+      "audio": "/audio/ears.mp3"
+    },
+    "nose": {
+      "label": "Nose",
+      "image": "/images/nose.svg",
+      "audio": "/audio/nose.mp3"
+    },
+    "mouth": {
+      "label": "Mouth",
+      "image": "/images/mouth.svg",
+      "audio": "/audio/mouth.mp3"
+    },
+    "arms": {
+      "label": "Arms",
+      "image": "/images/arms.svg",
+      "audio": "/audio/arms.mp3"
+    },
+    "hands": {
+      "label": "Hands",
+      "image": "/images/hands.svg",
+      "audio": "/audio/hands.mp3"
+    },
+    "fingers": {
+      "label": "Fingers",
+      "image": "/images/fingers.svg",
+      "audio": "/audio/fingers.mp3"
+    },
+    "legs": {
+      "label": "Legs",
+      "image": "/images/legs.svg",
+      "audio": "/audio/legs.mp3"
+    },
+    "feet": {
+      "label": "Feet",
+      "image": "/images/feet.svg",
+      "audio": "/audio/feet.mp3"
+    },
+    "toes": {
+      "label": "Toes",
+      "image": "/images/toes.svg",
+      "audio": "/audio/toes.mp3"
+    },
+    "belly": {
+      "label": "Belly",
+      "image": "/images/belly.svg",
+      "audio": "/audio/belly.mp3"
+    },
+    "back": {
+      "label": "Back",
+      "image": "/images/back.svg",
+      "audio": "/audio/back.mp3"
+    },
+    "shoulders": {
+      "label": "Shoulders",
+      "image": "/images/shoulders.svg",
+      "audio": "/audio/shoulders.mp3"
+    },
+    "knees": {
+      "label": "Knees",
+      "image": "/images/knees.svg",
+      "audio": "/audio/knees.mp3"
+    },
+    "elbows": {
+      "label": "Elbows",
+      "image": "/images/elbows.svg",
+      "audio": "/audio/elbows.mp3"
+    },
+    "chest": {
+      "label": "Chest",
+      "image": "/images/chest.svg",
+      "audio": "/audio/chest.mp3"
+    },
+    "neck": {
+      "label": "Neck",
+      "image": "/images/neck.svg",
+      "audio": "/audio/neck.mp3"
     }
   }
 }

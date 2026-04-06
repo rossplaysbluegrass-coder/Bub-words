@@ -148,14 +148,24 @@
 }
 
 .parent-mode__add-picker {
-  margin-top: 12px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
+}
+
+.parent-mode__add-picker-results {
+  max-height: min(48vh, 420px);
+  overflow: auto;
   border: 1px solid #dce3ec;
   border-radius: 10px;
   padding: 8px;
   background: #f9fbff;
+}
+
+.parent-mode__add-picker-empty {
+  color: #607080;
+  text-align: center;
+  padding: 18px 12px;
 }
 
 .parent-mode__checkbox-row {
@@ -163,6 +173,12 @@
   align-items: center;
   gap: 8px;
   width: 100%;
+}
+
+.parent-mode__checkbox-row span {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: initial;
 }
 
 .parent-mode__visual-editor {
@@ -360,6 +376,15 @@
   width: min(940px, 100%);
   max-height: min(86vh, 900px);
   overflow: auto;
+}
+
+.parent-mode__modal-card--picker {
+  width: min(640px, 100%);
+  max-height: min(82vh, 760px);
+}
+
+.parent-mode__modal-backdrop--stacked {
+  z-index: 1310;
 }
 
 .parent-mode__modal-header {

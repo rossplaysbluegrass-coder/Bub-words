@@ -435,6 +435,7 @@ export function ParentMode({ baseConfig, initialOverrides, onClose, onApply }) {
   };
 
   const openAddItemsPicker = () => {
+    setOpenItemMenuId('');
     setIsAddItemsOpen(true);
     setPendingCategoryItems([]);
     setItemSearch('');
@@ -810,49 +811,71 @@ export function ParentMode({ baseConfig, initialOverrides, onClose, onApply }) {
               </div>
             </div>
 
-            {isAddItemsOpen && (
-              <div className="parent-mode__add-picker">
-                <div className="parent-mode__inline-form">
-                  <input
-                    type="search"
-                    value={itemSearch}
-                    onChange={(e) => setItemSearch(e.target.value)}
-                    placeholder="Search all items to add"
-                  />
-                </div>
+          </div>
+        </div>
+      )}
 
-                <ul className="parent-mode__list parent-mode__list--compact">
-                  {filteredCategoryAddItems.map(({ id, label }) => (
-                    <li key={id} className="parent-mode__list-row">
-                      <label className="parent-mode__checkbox-row">
-                        <input
-                          type="checkbox"
-                          checked={pendingCategoryItems.includes(id)}
-                          onChange={() => togglePendingCategoryItem(id)}
-                        />
-                        <span>
-                          {label}
-                          {hiddenItemSet.has(id) ? ' (hidden globally)' : ''}
-                        </span>
-                      </label>
-                    </li>
-                  ))}
-                </ul>
+      {isAddItemsOpen && editingCategory && (
+        <div
+          className="parent-mode__modal-backdrop parent-mode__modal-backdrop--stacked"
+          role="dialog"
+          aria-modal="true"
+          aria-label={`Add items to ${editingCategory.name}`}
+        >
+          <div className="parent-mode__modal-card parent-mode__modal-card--picker">
+            <div className="parent-mode__modal-header">
+              <h3>Add items to {editingCategory.name}</h3>
+              <button type="button" onClick={cancelAddItemsPicker}>Done</button>
+            </div>
 
-                <div className="parent-mode__inline-form">
-                  <button type="button" onClick={cancelAddItemsPicker}>
-                    Cancel
-                  </button>
-                  <button
-                    type="button"
-                    onClick={confirmAddItems}
-                    disabled={!pendingCategoryItems.length}
-                  >
-                    Add Selected ({pendingCategoryItems.length})
-                  </button>
-                </div>
+            <div className="parent-mode__add-picker">
+              <div className="parent-mode__inline-form">
+                <input
+                  type="search"
+                  value={itemSearch}
+                  onChange={(e) => setItemSearch(e.target.value)}
+                  placeholder="Search all items to add"
+                  autoFocus
+                />
               </div>
-            )}
+
+              <div className="parent-mode__add-picker-results">
+                {filteredCategoryAddItems.length ? (
+                  <ul className="parent-mode__list">
+                    {filteredCategoryAddItems.map(({ id, label }) => (
+                      <li key={id} className="parent-mode__list-row">
+                        <label className="parent-mode__checkbox-row">
+                          <input
+                            type="checkbox"
+                            checked={pendingCategoryItems.includes(id)}
+                            onChange={() => togglePendingCategoryItem(id)}
+                          />
+                          <span>
+                            {label}
+                            {hiddenItemSet.has(id) ? ' (hidden globally)' : ''}
+                          </span>
+                        </label>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="parent-mode__add-picker-empty">No matching items found.</p>
+                )}
+              </div>
+
+              <div className="parent-mode__inline-form">
+                <button type="button" onClick={cancelAddItemsPicker}>
+                  Cancel
+                </button>
+                <button
+                  type="button"
+                  onClick={confirmAddItems}
+                  disabled={!pendingCategoryItems.length}
+                >
+                  Add Selected ({pendingCategoryItems.length})
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       )}
