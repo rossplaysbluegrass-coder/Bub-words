@@ -1,0 +1,666 @@
+﻿{
+    "generatedAt":  "2026-04-07T13:08:55",
+    "note":  "These SVGs are auto-generated placeholders and can be replaced later with hand-drawn icons using the same filenames.",
+    "files":  [
+                  {
+                      "id":  "adult",
+                      "label":  "Adult",
+                      "image":  "/images/adult.svg"
+                  },
+                  {
+                      "id":  "applesauce",
+                      "label":  "Applesauce",
+                      "image":  "/images/applesauce.svg"
+                  },
+                  {
+                      "id":  "arms",
+                      "label":  "Arms",
+                      "image":  "/images/arms.svg"
+                  },
+                  {
+                      "id":  "aunt",
+                      "label":  "Aunt",
+                      "image":  "/images/aunt.svg"
+                  },
+                  {
+                      "id":  "baby",
+                      "label":  "Baby",
+                      "image":  "/images/baby.svg"
+                  },
+                  {
+                      "id":  "back",
+                      "label":  "Back",
+                      "image":  "/images/back.svg"
+                  },
+                  {
+                      "id":  "bag",
+                      "label":  "Bag",
+                      "image":  "/images/bag.svg"
+                  },
+                  {
+                      "id":  "ball",
+                      "label":  "Ball",
+                      "image":  "/images/ball.svg"
+                  },
+                  {
+                      "id":  "balloon",
+                      "label":  "Balloon",
+                      "image":  "/images/balloon.svg"
+                  },
+                  {
+                      "id":  "bath",
+                      "label":  "Bath",
+                      "image":  "/images/bath.svg"
+                  },
+                  {
+                      "id":  "bear",
+                      "label":  "Bear",
+                      "image":  "/images/bear.svg"
+                  },
+                  {
+                      "id":  "belly",
+                      "label":  "Belly",
+                      "image":  "/images/belly.svg"
+                  },
+                  {
+                      "id":  "bird",
+                      "label":  "Bird",
+                      "image":  "/images/bird.svg"
+                  },
+                  {
+                      "id":  "blanket",
+                      "label":  "Blanket",
+                      "image":  "/images/blanket.svg"
+                  },
+                  {
+                      "id":  "block",
+                      "label":  "Block",
+                      "image":  "/images/block.svg"
+                  },
+                  {
+                      "id":  "bottle",
+                      "label":  "Bottle",
+                      "image":  "/images/bottle.svg"
+                  },
+                  {
+                      "id":  "bowl",
+                      "label":  "Bowl",
+                      "image":  "/images/bowl.svg"
+                  },
+                  {
+                      "id":  "bread",
+                      "label":  "Bread",
+                      "image":  "/images/bread.svg"
+                  },
+                  {
+                      "id":  "brother",
+                      "label":  "Brother",
+                      "image":  "/images/brother.svg"
+                  },
+                  {
+                      "id":  "brush",
+                      "label":  "Brush",
+                      "image":  "/images/brush.svg"
+                  },
+                  {
+                      "id":  "car",
+                      "label":  "Car",
+                      "image":  "/images/car.svg"
+                  },
+                  {
+                      "id":  "cat",
+                      "label":  "Cat",
+                      "image":  "/images/cat.svg"
+                  },
+                  {
+                      "id":  "chair",
+                      "label":  "Chair",
+                      "image":  "/images/chair.svg"
+                  },
+                  {
+                      "id":  "change",
+                      "label":  "Change",
+                      "image":  "/images/change.svg"
+                  },
+                  {
+                      "id":  "chest",
+                      "label":  "Chest",
+                      "image":  "/images/chest.svg"
+                  },
+                  {
+                      "id":  "chicken",
+                      "label":  "Chicken",
+                      "image":  "/images/chicken.svg"
+                  },
+                  {
+                      "id":  "child",
+                      "label":  "Child",
+                      "image":  "/images/child.svg"
+                  },
+                  {
+                      "id":  "clean",
+                      "label":  "Clean",
+                      "image":  "/images/clean.svg"
+                  },
+                  {
+                      "id":  "cookie",
+                      "label":  "Cookie",
+                      "image":  "/images/cookie.svg"
+                  },
+                  {
+                      "id":  "cow",
+                      "label":  "Cow",
+                      "image":  "/images/cow.svg"
+                  },
+                  {
+                      "id":  "crayon",
+                      "label":  "Crayon",
+                      "image":  "/images/crayon.svg"
+                  },
+                  {
+                      "id":  "cup",
+                      "label":  "Cup",
+                      "image":  "/images/cup.svg"
+                  },
+                  {
+                      "id":  "dance",
+                      "label":  "Dance",
+                      "image":  "/images/dance.svg"
+                  },
+                  {
+                      "id":  "doctor",
+                      "label":  "Doctor",
+                      "image":  "/images/doctor.svg"
+                  },
+                  {
+                      "id":  "dog",
+                      "label":  "Dog",
+                      "image":  "/images/dog.svg"
+                  },
+                  {
+                      "id":  "doll",
+                      "label":  "Doll",
+                      "image":  "/images/doll.svg"
+                  },
+                  {
+                      "id":  "door",
+                      "label":  "Door",
+                      "image":  "/images/door.svg"
+                  },
+                  {
+                      "id":  "draw",
+                      "label":  "Draw",
+                      "image":  "/images/draw.svg"
+                  },
+                  {
+                      "id":  "dress",
+                      "label":  "Dress",
+                      "image":  "/images/dress.svg"
+                  },
+                  {
+                      "id":  "drink",
+                      "label":  "Drink",
+                      "image":  "/images/drink.svg"
+                  },
+                  {
+                      "id":  "duck",
+                      "label":  "Duck",
+                      "image":  "/images/duck.svg"
+                  },
+                  {
+                      "id":  "ears",
+                      "label":  "Ears",
+                      "image":  "/images/ears.svg"
+                  },
+                  {
+                      "id":  "eat",
+                      "label":  "Eat",
+                      "image":  "/images/eat.svg"
+                  },
+                  {
+                      "id":  "elbows",
+                      "label":  "Elbows",
+                      "image":  "/images/elbows.svg"
+                  },
+                  {
+                      "id":  "elephant",
+                      "label":  "Elephant",
+                      "image":  "/images/elephant.svg"
+                  },
+                  {
+                      "id":  "feet",
+                      "label":  "Feet",
+                      "image":  "/images/feet.svg"
+                  },
+                  {
+                      "id":  "fingers",
+                      "label":  "Fingers",
+                      "image":  "/images/fingers.svg"
+                  },
+                  {
+                      "id":  "fish",
+                      "label":  "Fish",
+                      "image":  "/images/fish.svg"
+                  },
+                  {
+                      "id":  "food",
+                      "label":  "Food",
+                      "image":  "/images/food.svg"
+                  },
+                  {
+                      "id":  "fork",
+                      "label":  "Fork",
+                      "image":  "/images/fork.svg"
+                  },
+                  {
+                      "id":  "friend",
+                      "label":  "Friend",
+                      "image":  "/images/friend.svg"
+                  },
+                  {
+                      "id":  "frog",
+                      "label":  "Frog",
+                      "image":  "/images/frog.svg"
+                  },
+                  {
+                      "id":  "fruit",
+                      "label":  "Fruit",
+                      "image":  "/images/fruit.svg"
+                  },
+                  {
+                      "id":  "giraffe",
+                      "label":  "Giraffe",
+                      "image":  "/images/giraffe.svg"
+                  },
+                  {
+                      "id":  "goodbye",
+                      "label":  "Goodbye",
+                      "image":  "/images/goodbye.svg"
+                  },
+                  {
+                      "id":  "grandma",
+                      "label":  "Grandma",
+                      "image":  "/images/grandma.svg"
+                  },
+                  {
+                      "id":  "grandpa",
+                      "label":  "Grandpa",
+                      "image":  "/images/grandpa.svg"
+                  },
+                  {
+                      "id":  "hands",
+                      "label":  "Hands",
+                      "image":  "/images/hands.svg"
+                  },
+                  {
+                      "id":  "hat",
+                      "label":  "Hat",
+                      "image":  "/images/hat.svg"
+                  },
+                  {
+                      "id":  "head",
+                      "label":  "Head",
+                      "image":  "/images/head.svg"
+                  },
+                  {
+                      "id":  "hello",
+                      "label":  "Hello",
+                      "image":  "/images/hello.svg"
+                  },
+                  {
+                      "id":  "help",
+                      "label":  "Help",
+                      "image":  "/images/help.svg"
+                  },
+                  {
+                      "id":  "horse",
+                      "label":  "Horse",
+                      "image":  "/images/horse.svg"
+                  },
+                  {
+                      "id":  "hug",
+                      "label":  "Hug",
+                      "image":  "/images/hug.svg"
+                  },
+                  {
+                      "id":  "hungry",
+                      "label":  "Hungry",
+                      "image":  "/images/hungry.svg"
+                  },
+                  {
+                      "id":  "hurt",
+                      "label":  "Hurt",
+                      "image":  "/images/hurt.svg"
+                  },
+                  {
+                      "id":  "I don\u0027t know",
+                      "label":  "I don\u0027t know",
+                      "image":  "/images/i-dont-know.svg"
+                  },
+                  {
+                      "id":  "I don\u0027t like",
+                      "label":  "I don\u0027t like",
+                      "image":  "/images/i-dont-like.svg"
+                  },
+                  {
+                      "id":  "I like",
+                      "label":  "I like",
+                      "image":  "/images/i-like.svg"
+                  },
+                  {
+                      "id":  "I need",
+                      "label":  "I need",
+                      "image":  "/images/i-need.svg"
+                  },
+                  {
+                      "id":  "I want",
+                      "label":  "I want",
+                      "image":  "/images/i-want.svg"
+                  },
+                  {
+                      "id":  "jacket",
+                      "label":  "Jacket",
+                      "image":  "/images/jacket.svg"
+                  },
+                  {
+                      "id":  "juice",
+                      "label":  "Juice",
+                      "image":  "/images/juice.svg"
+                  },
+                  {
+                      "id":  "knees",
+                      "label":  "Knees",
+                      "image":  "/images/knees.svg"
+                  },
+                  {
+                      "id":  "knife",
+                      "label":  "Knife",
+                      "image":  "/images/knife.svg"
+                  },
+                  {
+                      "id":  "legs",
+                      "label":  "Legs",
+                      "image":  "/images/legs.svg"
+                  },
+                  {
+                      "id":  "light",
+                      "label":  "Light",
+                      "image":  "/images/light.svg"
+                  },
+                  {
+                      "id":  "lion",
+                      "label":  "Lion",
+                      "image":  "/images/lion.svg"
+                  },
+                  {
+                      "id":  "meat",
+                      "label":  "Meat",
+                      "image":  "/images/meat.svg"
+                  },
+                  {
+                      "id":  "milk",
+                      "label":  "Milk",
+                      "image":  "/images/milk.svg"
+                  },
+                  {
+                      "id":  "monkey",
+                      "label":  "Monkey",
+                      "image":  "/images/monkey.svg"
+                  },
+                  {
+                      "id":  "more",
+                      "label":  "More",
+                      "image":  "/images/more.svg"
+                  },
+                  {
+                      "id":  "music",
+                      "label":  "Music",
+                      "image":  "/images/music.svg"
+                  },
+                  {
+                      "id":  "neck",
+                      "label":  "Neck",
+                      "image":  "/images/neck.svg"
+                  },
+                  {
+                      "id":  "neighbor",
+                      "label":  "Neighbor",
+                      "image":  "/images/neighbor.svg"
+                  },
+                  {
+                      "id":  "no",
+                      "label":  "No",
+                      "image":  "/images/no.svg"
+                  },
+                  {
+                      "id":  "outside",
+                      "label":  "Outside",
+                      "image":  "/images/outside.svg"
+                  },
+                  {
+                      "id":  "pajamas",
+                      "label":  "Pajamas",
+                      "image":  "/images/pajamas.svg"
+                  },
+                  {
+                      "id":  "pants",
+                      "label":  "Pants",
+                      "image":  "/images/pants.svg"
+                  },
+                  {
+                      "id":  "paper",
+                      "label":  "Paper",
+                      "image":  "/images/paper.svg"
+                  },
+                  {
+                      "id":  "pasta",
+                      "label":  "Pasta",
+                      "image":  "/images/pasta.svg"
+                  },
+                  {
+                      "id":  "phone",
+                      "label":  "Phone",
+                      "image":  "/images/phone.svg"
+                  },
+                  {
+                      "id":  "pig",
+                      "label":  "Pig",
+                      "image":  "/images/pig.svg"
+                  },
+                  {
+                      "id":  "pillow",
+                      "label":  "Pillow",
+                      "image":  "/images/pillow.svg"
+                  },
+                  {
+                      "id":  "plate",
+                      "label":  "Plate",
+                      "image":  "/images/plate.svg"
+                  },
+                  {
+                      "id":  "play",
+                      "label":  "Play",
+                      "image":  "/images/play.svg"
+                  },
+                  {
+                      "id":  "please",
+                      "label":  "Please",
+                      "image":  "/images/please.svg"
+                  },
+                  {
+                      "id":  "police",
+                      "label":  "Police",
+                      "image":  "/images/police.svg"
+                  },
+                  {
+                      "id":  "potty",
+                      "label":  "Potty",
+                      "image":  "/images/potty.svg"
+                  },
+                  {
+                      "id":  "puzzle",
+                      "label":  "Puzzle",
+                      "image":  "/images/puzzle.svg"
+                  },
+                  {
+                      "id":  "rabbit",
+                      "label":  "Rabbit",
+                      "image":  "/images/rabbit.svg"
+                  },
+                  {
+                      "id":  "rice",
+                      "label":  "Rice",
+                      "image":  "/images/rice.svg"
+                  },
+                  {
+                      "id":  "run",
+                      "label":  "Run",
+                      "image":  "/images/run.svg"
+                  },
+                  {
+                      "id":  "sheep",
+                      "label":  "Sheep",
+                      "image":  "/images/sheep.svg"
+                  },
+                  {
+                      "id":  "shirt",
+                      "label":  "Shirt",
+                      "image":  "/images/shirt.svg"
+                  },
+                  {
+                      "id":  "shoes",
+                      "label":  "Shoes",
+                      "image":  "/images/shoes.svg"
+                  },
+                  {
+                      "id":  "shoulders",
+                      "label":  "Shoulders",
+                      "image":  "/images/shoulders.svg"
+                  },
+                  {
+                      "id":  "sing",
+                      "label":  "Sing",
+                      "image":  "/images/sing.svg"
+                  },
+                  {
+                      "id":  "sister",
+                      "label":  "Sister",
+                      "image":  "/images/sister.svg"
+                  },
+                  {
+                      "id":  "snack",
+                      "label":  "Snack",
+                      "image":  "/images/snack.svg"
+                  },
+                  {
+                      "id":  "snake",
+                      "label":  "Snake",
+                      "image":  "/images/snake.svg"
+                  },
+                  {
+                      "id":  "socks",
+                      "label":  "Socks",
+                      "image":  "/images/socks.svg"
+                  },
+                  {
+                      "id":  "sorry",
+                      "label":  "Sorry",
+                      "image":  "/images/sorry.svg"
+                  },
+                  {
+                      "id":  "spoon",
+                      "label":  "Spoon",
+                      "image":  "/images/spoon.svg"
+                  },
+                  {
+                      "id":  "stop",
+                      "label":  "Stop",
+                      "image":  "/images/stop.svg"
+                  },
+                  {
+                      "id":  "table",
+                      "label":  "Table",
+                      "image":  "/images/table.svg"
+                  },
+                  {
+                      "id":  "teacher",
+                      "label":  "Teacher",
+                      "image":  "/images/teacher.svg"
+                  },
+                  {
+                      "id":  "thank you",
+                      "label":  "Thank You",
+                      "image":  "/images/thank-you.svg"
+                  },
+                  {
+                      "id":  "thirsty",
+                      "label":  "Thirsty",
+                      "image":  "/images/thirsty.svg"
+                  },
+                  {
+                      "id":  "tiger",
+                      "label":  "Tiger",
+                      "image":  "/images/tiger.svg"
+                  },
+                  {
+                      "id":  "toes",
+                      "label":  "Toes",
+                      "image":  "/images/toes.svg"
+                  },
+                  {
+                      "id":  "toothbrush",
+                      "label":  "Toothbrush",
+                      "image":  "/images/toothbrush.svg"
+                  },
+                  {
+                      "id":  "toy",
+                      "label":  "Toy",
+                      "image":  "/images/toy.svg"
+                  },
+                  {
+                      "id":  "TV",
+                      "label":  "TV",
+                      "image":  "/images/tv.svg"
+                  },
+                  {
+                      "id":  "uncle",
+                      "label":  "Uncle",
+                      "image":  "/images/uncle.svg"
+                  },
+                  {
+                      "id":  "undress",
+                      "label":  "Undress",
+                      "image":  "/images/undress.svg"
+                  },
+                  {
+                      "id":  "vegetable",
+                      "label":  "Vegetable",
+                      "image":  "/images/vegetable.svg"
+                  },
+                  {
+                      "id":  "walk",
+                      "label":  "Walk",
+                      "image":  "/images/walk.svg"
+                  },
+                  {
+                      "id":  "wash",
+                      "label":  "Wash",
+                      "image":  "/images/wash.svg"
+                  },
+                  {
+                      "id":  "window",
+                      "label":  "Window",
+                      "image":  "/images/window.svg"
+                  },
+                  {
+                      "id":  "yes",
+                      "label":  "Yes",
+                      "image":  "/images/yes.svg"
+                  },
+                  {
+                      "id":  "zebra",
+                      "label":  "Zebra",
+                      "image":  "/images/zebra.svg"
+                  }
+              ]
+}
