@@ -73,6 +73,10 @@
   border-color: #e1c300;
 }
 
+.parent-mode__button--support-trigger {
+  display: none;
+}
+
 .parent-mode__header .parent-mode__button--ghost {
   background: #fff;
   color: #1d2a36;
@@ -448,7 +452,20 @@
 }
 
 @media (max-width: 720px) {
+  .parent-mode__header-actions {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .parent-mode__button--support-trigger {
+    display: inline-flex;
+  }
+
   .parent-mode__body {
     grid-template-columns: 1fr;
+  }
+
+  .parent-mode__panel--support {
+    display: none;
   }
 }

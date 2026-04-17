@@ -516,6 +516,20 @@ export function ParentMode({ baseConfig, initialOverrides, onClose, onApply }) {
     }
   };
 
+  const maybeUnlockFromInput = (value) => {
+    if (lockedUntil > Date.now()) return;
+
+    const numericAnswer = Number(value.trim());
+    if (Number.isNaN(numericAnswer)) return;
+
+    if (numericAnswer === mathProblem.answer) {
+      setUnlocked(true);
+      setMathProblem(buildMathProblem());
+      setMathAnswer('');
+      setFailedAttempts(0);
+    }
+  };
+
   const handleSave = () => {
     const stored = saveOverrides(draft);
     onApply?.(stored);
@@ -567,8 +581,14 @@ export function ParentMode({ baseConfig, initialOverrides, onClose, onApply }) {
             <input
               id="parent-math-answer"
               value={mathAnswer}
-              onChange={(e) => setMathAnswer(e.target.value)}
+              onChange={(e) => {
+                const nextValue = e.target.value;
+                setMathAnswer(nextValue);
+                maybeUnlockFromInput(nextValue);
+              }}
               inputMode="numeric"
+              pattern="[0-9]*"
+              enterKeyHint="done"
               autoComplete="off"
               disabled={isLocked}
             />
@@ -606,6 +626,13 @@ export function ParentMode({ baseConfig, initialOverrides, onClose, onApply }) {
       <header className="parent-mode__header">
         <h2>Parent Mode</h2>
         <div className="parent-mode__header-actions">
+          <button
+            type="button"
+            onClick={openDonateModal}
+            className="parent-mode__button parent-mode__button--ghost parent-mode__button--support-trigger"
+          >
+            Donate
+          </button>
           <button type="button" onClick={handleClearSettings} className="parent-mode__button parent-mode__button--ghost">
             Clear settings
           </button>
