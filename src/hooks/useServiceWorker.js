@@ -87,19 +87,23 @@ export function useServiceWorker() {
         navigator.serviceWorker.addEventListener('controllerchange', onControllerChange);
 
         const checkForUpdates = () => registration.update().catch(() => {});
+        // Check immediately, then every 5 min, AND when app becomes visible
         checkForUpdates();
-        const periodicTimer = window.setInterval(checkForUpdates, 30 * 60 * 1000);
+        const periodicTimer = window.setInterval(checkForUpdates, 5 * 60 * 1000);
         const onVisible = () => {
           if (document.visibilityState === 'visible') {
             checkForUpdates();
           }
         };
-
+        // Also check when device regains network connectivity
+        const onOnline = () => checkForUpdates();
+        window.addEventListener('online', onOnline);
         document.addEventListener('visibilitychange', onVisible);
 
         cleanupRegistration = () => {
           window.clearInterval(periodicTimer);
           document.removeEventListener('visibilitychange', onVisible);
+          window.removeEventListener('online', onOnline);
           navigator.serviceWorker.removeEventListener('controllerchange', onControllerChange);
         };
       })

@@ -36,8 +36,6 @@
         "cookie", 
         "sausage", 
         "yogurt", 
-        "applesauce", 
-        "juice", 
         "pasta", 
         "rice", 
         "fruit", 
@@ -252,13 +250,7 @@
         "legs",
         "feet",
         "toes",
-        "belly",
-        "back",
-        "shoulders",
-        "knees",
-        "elbows",
-        "chest",
-        "neck"
+        "belly"
       ]
     }
   ],
@@ -488,16 +480,6 @@
       "label": "Yogurt",
       "image": "/images/yogurt.svg",
       "audio": "/audio/yogurt.mp3"
-    },
-    "applesauce": {
-      "label": "Applesauce",
-      "image": "/images/applesauce.svg",
-      "audio": "/audio/applesauce.mp3"
-    },
-    "juice": {
-      "label": "Juice",
-      "image": "/images/juice.svg",
-      "audio": "/audio/juice.mp3"
     },
     "pasta": {
       "label": "Pasta",
@@ -1313,36 +1295,6 @@
       "label": "Belly",
       "image": "/images/belly.svg",
       "audio": "/audio/belly.mp3"
-    },
-    "back": {
-      "label": "Back",
-      "image": "/images/back.svg",
-      "audio": "/audio/back.mp3"
-    },
-    "shoulders": {
-      "label": "Shoulders",
-      "image": "/images/shoulders.svg",
-      "audio": "/audio/shoulders.mp3"
-    },
-    "knees": {
-      "label": "Knees",
-      "image": "/images/knees.svg",
-      "audio": "/audio/knees.mp3"
-    },
-    "elbows": {
-      "label": "Elbows",
-      "image": "/images/elbows.svg",
-      "audio": "/audio/elbows.mp3"
-    },
-    "chest": {
-      "label": "Chest",
-      "image": "/images/chest.svg",
-      "audio": "/audio/chest.mp3"
-    },
-    "neck": {
-      "label": "Neck",
-      "image": "/images/neck.svg",
-      "audio": "/audio/neck.mp3"
     }
   }
 }

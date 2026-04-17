@@ -50,6 +50,26 @@ self.addEventListener('activate', (event) => {
   );
 });
 
+// ─── Helpers ────────────────────────────────────────────────────────────────
+
+/**
+ * Fetch with timeout. Fails fast so offline fallback is instant.
+ * If network is slow or down, falls back to cache immediately.
+ */
+async function fetchWithTimeout(request, timeoutMs = 5000) {
+  const controller = new AbortController();
+  const id = setTimeout(() => controller.abort(), timeoutMs);
+
+  try {
+    const response = await fetch(request, { signal: controller.signal });
+    clearTimeout(id);
+    return response;
+  } catch (err) {
+    clearTimeout(id);
+    throw err;
+  }
+}
+
 // ─── Fetch ──────────────────────────────────────────────────────────────────
 
 self.addEventListener('fetch', (event) => {
@@ -87,7 +107,7 @@ self.addEventListener('fetch', (event) => {
 
 async function networkFirstShell(request) {
   try {
-    const response = await fetch(request);
+    const response = await fetchWithTimeout(request, 5000);
 
     if (response && response.ok) {
       const cache = await caches.open(SHELL_CACHE);
@@ -103,7 +123,7 @@ async function networkFirstShell(request) {
 
 async function networkFirstCache(request, cacheName) {
   try {
-    const response = await fetch(request);
+    const response = await fetchWithTimeout(request, 5000);
 
     if (response && response.ok) {
       const cache = await caches.open(cacheName);
