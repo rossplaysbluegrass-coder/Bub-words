@@ -63,6 +63,16 @@
   border-color: #c7d3e0;
 }
 
+.parent-mode__button--coffee {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background: #ffdd00;
+  color: #2b2100;
+  border-color: #e1c300;
+}
+
 .parent-mode__header .parent-mode__button--ghost {
   background: #fff;
   color: #1d2a36;
@@ -92,6 +102,26 @@
 .parent-mode__panel h3 {
   margin: 0;
   font-size: 1rem;
+}
+
+.parent-mode__panel--support {
+  justify-content: space-between;
+}
+
+.parent-mode__support-text {
+  margin: 0;
+  color: #526474;
+  line-height: 1.5;
+}
+
+.parent-mode__support-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.parent-mode__support-actions--modal {
+  justify-content: flex-start;
 }
 
 .parent-mode__list {
@@ -383,8 +413,26 @@
   max-height: min(82vh, 760px);
 }
 
+.parent-mode__modal-card--support {
+  width: min(720px, 100%);
+  max-height: min(82vh, 760px);
+  overflow: auto;
+}
+
 .parent-mode__modal-backdrop--stacked {
   z-index: 1310;
+}
+
+.parent-mode__support-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #1d2a36;
+  line-height: 1.6;
+}
+
+.parent-mode__support-content p {
+  margin: 0;
 }
 
 .parent-mode__modal-header {

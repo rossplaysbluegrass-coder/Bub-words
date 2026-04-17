@@ -88,6 +88,7 @@ export function ParentMode({ baseConfig, initialOverrides, onClose, onApply }) {
   const [isCreateCategoryOpen, setIsCreateCategoryOpen] = useState(false);
   const [pendingCategoryName, setPendingCategoryName] = useState('');
   const [isEditCategoryOpen, setIsEditCategoryOpen] = useState(false);
+  const [isDonateOpen, setIsDonateOpen] = useState(false);
   const [itemSearch, setItemSearch] = useState('');
   const [isAddItemsOpen, setIsAddItemsOpen] = useState(false);
   const [pendingCategoryItems, setPendingCategoryItems] = useState([]);
@@ -308,6 +309,14 @@ export function ParentMode({ baseConfig, initialOverrides, onClose, onApply }) {
   const openCreateCategoryModal = () => {
     setPendingCategoryName('');
     setIsCreateCategoryOpen(true);
+  };
+
+  const openDonateModal = () => {
+    setIsDonateOpen(true);
+  };
+
+  const closeDonateModal = () => {
+    setIsDonateOpen(false);
   };
 
   const cancelCreateCategoryModal = () => {
@@ -531,6 +540,7 @@ export function ParentMode({ baseConfig, initialOverrides, onClose, onApply }) {
     setIsCreateCategoryOpen(false);
     setPendingCategoryName('');
     setIsEditCategoryOpen(false);
+    setIsDonateOpen(false);
     setItemSearch('');
     setIsAddItemsOpen(false);
     setPendingCategoryItems([]);
@@ -660,6 +670,28 @@ export function ParentMode({ baseConfig, initialOverrides, onClose, onApply }) {
 
           <div className="parent-mode__section-actions">
             <button type="button" onClick={openCreateCategoryModal}>+ New Category</button>
+          </div>
+        </section>
+
+        <section className="parent-mode__panel parent-mode__panel--support">
+          <h3>Support Bub Words</h3>
+          <p className="parent-mode__support-text">
+            Bub Words will always be free. If it helps your family and you want to support
+            the project, you can read the story behind it or donate here.
+          </p>
+
+          <div className="parent-mode__support-actions">
+            <button type="button" onClick={openDonateModal}>
+              Read more
+            </button>
+            <a
+              className="parent-mode__button parent-mode__button--coffee"
+              href="https://buymeacoffee.com/rossplaysbluegrass"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Buy Me a Coffee
+            </a>
           </div>
         </section>
 
@@ -875,6 +907,62 @@ export function ParentMode({ baseConfig, initialOverrides, onClose, onApply }) {
                   Add Selected ({pendingCategoryItems.length})
                 </button>
               </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {isDonateOpen && (
+        <div
+          className="parent-mode__modal-backdrop"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Support Bub Words"
+        >
+          <div className="parent-mode__modal-card parent-mode__modal-card--support">
+            <div className="parent-mode__modal-header">
+              <h3>Support Bub Words</h3>
+              <button type="button" onClick={closeDonateModal}>Done</button>
+            </div>
+
+            <div className="parent-mode__support-content">
+              <p>
+                Hi, I’m a father of three, and one of my kids is level 3 autistic and
+                (currently) non-verbal.
+              </p>
+              <p>I built Bub Words for him.</p>
+              <p>
+                I needed something simple, fast, toddler-friendly, and reliable. Something
+                that worked offline, didn’t lag when he tapped a word, and could grow with
+                him over time. Most importantly, I wanted something I could fully control and
+                customize as his needs change.
+              </p>
+              <p>
+                This project started as something just for us, but I realized other families
+                might need the same thing. So I’m sharing it.
+              </p>
+              <p>
+                <strong>Bub Words will always be free.</strong>
+              </p>
+              <p>
+                If it helps your family, that’s what matters most. If you’d like to support
+                the project or help me keep improving it, you can do that here.
+              </p>
+              <p>Thanks for being part of this.</p>
+            </div>
+
+            <div className="parent-mode__support-actions parent-mode__support-actions--modal">
+              <a
+                className="parent-mode__button parent-mode__button--coffee"
+                href="https://buymeacoffee.com/rossplaysbluegrass"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Buy Me a Coffee
+              </a>
+              <button type="button" onClick={closeDonateModal}>
+                Close
+              </button>
             </div>
           </div>
         </div>
