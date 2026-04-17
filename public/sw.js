@@ -11,7 +11,7 @@
 
 // Increment this whenever you change the service worker or want to invalidate
 // older cached shell/config data on installed devices.
-const CACHE_VERSION = 'v4';
+const CACHE_VERSION = 'v5';
 const SHELL_CACHE = `freeaac-shell-${CACHE_VERSION}`;
 const ASSET_CACHE = `freeaac-assets-${CACHE_VERSION}`;
 
