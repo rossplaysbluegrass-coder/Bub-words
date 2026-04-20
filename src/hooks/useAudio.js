@@ -1,4 +1,4 @@
-import { useRef, useCallback } from 'react';
+import { useRef, useCallback, useState } from 'react';
 
 /**
  * Provides instant audio playback for vocabulary items.
@@ -14,38 +14,150 @@ export function useAudio() {
   const pool = useRef(new Map());
   /** @type {{ current: HTMLAudioElement | null }} */
   const currentRef = useRef(null);
+  /** Map<url: string, 'loading' | 'ready' | 'error'> */
+  const statusRef = useRef(new Map());
+  /** Map<url: string, Promise<void>> */
+  const promiseRef = useRef(new Map());
+  const batchRef = useRef(0);
+  const [audioProgress, setAudioProgress] = useState(null);
+  const [audioReady, setAudioReady] = useState(false);
+  const [isAudioPreloading, setIsAudioPreloading] = useState(false);
 
   /**
    * Preloads an audio URL into the pool without playing it.
    * Safe to call multiple times for the same URL.
    */
   const preload = useCallback((url) => {
-    if (!url || pool.current.has(url)) return;
-    const audio = new Audio();
-    audio.preload = 'auto';
-    // Log decoding errors at preload time so they surface before the user taps.
-    audio.addEventListener('error', () => {
-      const { code, message } = audio.error ?? {};
-      // code 4 = MEDIA_ERR_SRC_NOT_SUPPORTED (bad format or 404)
-      // code 2 = MEDIA_ERR_NETWORK
-      console.error(
-        `[Bub Words] Failed to preload audio (code ${code}): ${url}\n` +
-          (code === 4
-            ? 'File not found, corrupt, or in an unsupported format (e.g. AAC/M4A renamed to .mp3). Re-encode with ffmpeg: ffmpeg -i input -codec:a libmp3lame -qscale:a 2 output.mp3'
-            : message)
-      );
-    }, { once: true });
-    audio.src = url;
-    audio.load();
-    pool.current.set(url, audio);
+    if (!url) return Promise.resolve();
+
+    const currentStatus = statusRef.current.get(url);
+    if (currentStatus === 'ready' || currentStatus === 'error') {
+      return Promise.resolve();
+    }
+
+    const existingPromise = promiseRef.current.get(url);
+    if (existingPromise) {
+      return existingPromise;
+    }
+
+    let audio = pool.current.get(url);
+    if (!audio) {
+      audio = new Audio();
+      audio.preload = 'auto';
+      audio.src = url;
+      pool.current.set(url, audio);
+    }
+
+    statusRef.current.set(url, 'loading');
+
+    const preloadPromise = new Promise((resolve) => {
+      let settled = false;
+
+      const cleanup = () => {
+        audio.removeEventListener('canplaythrough', handleReady);
+        audio.removeEventListener('loadeddata', handleReady);
+        audio.removeEventListener('error', handleError);
+      };
+
+      const finish = (nextStatus) => {
+        if (settled) return;
+        settled = true;
+        cleanup();
+        statusRef.current.set(url, nextStatus);
+        promiseRef.current.delete(url);
+        resolve();
+      };
+
+      const handleReady = () => finish('ready');
+
+      const handleError = () => {
+        const { code, message } = audio.error ?? {};
+        console.error(
+          `[Bub Words] Failed to preload audio (code ${code}): ${url}\n` +
+            (code === 4
+              ? 'File not found, corrupt, or in an unsupported format (e.g. AAC/M4A renamed to .mp3). Re-encode with ffmpeg: ffmpeg -i input -codec:a libmp3lame -qscale:a 2 output.mp3'
+              : message)
+        );
+        finish('error');
+      };
+
+      audio.addEventListener('canplaythrough', handleReady, { once: true });
+      audio.addEventListener('loadeddata', handleReady, { once: true });
+      audio.addEventListener('error', handleError, { once: true });
+      audio.load();
+    });
+
+    promiseRef.current.set(url, preloadPromise);
+    return preloadPromise;
   }, []);
 
   /**
    * Preloads an array of audio URLs (called after assets are cached by SW).
    */
   const preloadAll = useCallback(
-    (urls) => {
-      urls.forEach(preload);
+    async (urls) => {
+      const uniqueUrls = Array.from(new Set((urls || []).filter(Boolean)));
+      const batchId = ++batchRef.current;
+      const CONCURRENCY = 6;
+
+      if (!uniqueUrls.length) {
+        setAudioProgress({ loaded: 0, total: 0 });
+        setAudioReady(true);
+        setIsAudioPreloading(false);
+        return;
+      }
+
+      let completed = 0;
+      const pendingUrls = [];
+
+      uniqueUrls.forEach((url) => {
+        const status = statusRef.current.get(url);
+        if (status === 'ready' || status === 'error') {
+          completed += 1;
+          return;
+        }
+
+        pendingUrls.push(url);
+      });
+
+      setAudioReady(completed === uniqueUrls.length);
+      setIsAudioPreloading(completed !== uniqueUrls.length);
+      setAudioProgress({ loaded: completed, total: uniqueUrls.length });
+
+      if (!pendingUrls.length) {
+        return;
+      }
+
+      let nextIndex = 0;
+
+      const runWorker = async () => {
+        while (nextIndex < pendingUrls.length && batchRef.current === batchId) {
+          const url = pendingUrls[nextIndex];
+          nextIndex += 1;
+
+          try {
+            await preload(url);
+          } finally {
+            completed += 1;
+            if (batchRef.current === batchId) {
+              setAudioProgress({ loaded: completed, total: uniqueUrls.length });
+            }
+          }
+        }
+      };
+
+      await Promise.all(
+        Array.from(
+          { length: Math.min(CONCURRENCY, pendingUrls.length) },
+          () => runWorker()
+        )
+      );
+
+      if (batchRef.current === batchId) {
+        setAudioProgress({ loaded: uniqueUrls.length, total: uniqueUrls.length });
+        setAudioReady(true);
+        setIsAudioPreloading(false);
+      }
     },
     [preload]
   );
@@ -106,5 +218,12 @@ export function useAudio() {
     }
   }, []);
 
-  return { play, preload, preloadAll };
+  return {
+    play,
+    preload,
+    preloadAll,
+    audioProgress,
+    audioReady,
+    isAudioPreloading,
+  };
 }

@@ -24,7 +24,7 @@ import './styles/App.css';
  */
 export default function App() {
   const { vocabulary, loading: vocabLoading } = useVocabulary();
-  const { play, preloadAll } = useAudio();
+  const { play, preloadAll, audioProgress, audioReady, isAudioPreloading } = useAudio();
   const {
     swReady,
     cacheProgress,
@@ -98,10 +98,32 @@ export default function App() {
 
   // ── Render ──────────────────────────────────────────────────────────────────
 
-  const isReady = !vocabLoading && cacheComplete;
+  const isReady = !vocabLoading && cacheComplete && audioReady;
+
+  const loadingSubtitle = vocabLoading
+    ? 'Loading your words…'
+    : !cacheComplete
+      ? 'Saving words for offline use…'
+      : 'Loading voices…';
+
+  const loadingDetail = vocabLoading
+    ? 'Getting your vocabulary ready.'
+    : !cacheComplete
+      ? 'Downloading pictures and sounds so Bub Words works offline.'
+      : isAudioPreloading
+        ? 'Buttons may stay quiet until voices finish loading.'
+        : 'Almost ready.';
+
+  const loadingProgress = !cacheComplete ? cacheProgress : audioProgress;
 
   if (!isReady) {
-    return <LoadingScreen progress={cacheProgress} />;
+    return (
+      <LoadingScreen
+        progress={loadingProgress}
+        subtitle={loadingSubtitle}
+        detail={loadingDetail}
+      />
+    );
   }
 
   const activeCategory = effectiveVocabulary.categories.find(

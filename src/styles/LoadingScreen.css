@@ -50,6 +50,13 @@
   margin-top: -12px;
 }
 
+.loading-screen__detail {
+  margin-top: -10px;
+  font-size: 0.95rem;
+  color: #607080;
+  line-height: 1.45;
+}
+
 /* ── Progress bar ────────────────────────────────────────────────────────── */
 .loading-screen__progress {
   width: 100%;

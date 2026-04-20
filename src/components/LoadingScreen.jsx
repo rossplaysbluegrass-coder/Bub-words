@@ -6,8 +6,10 @@ import '../styles/LoadingScreen.css';
  *
  * Props:
  *  - progress: { cached: number, total: number } | null
+ *  - subtitle?: string
+ *  - detail?: string
  */
-export function LoadingScreen({ progress }) {
+export function LoadingScreen({ progress, subtitle = 'Loading image and audio files...', detail = '' }) {
   const percent =
     progress && progress.total > 0
       ? Math.round((progress.cached / progress.total) * 100)
@@ -30,7 +32,8 @@ export function LoadingScreen({ progress }) {
         </div>
 
         <h1 className="loading-screen__title">Bub Words</h1>
-        <p className="loading-screen__subtitle">Preparing your app…</p>
+        <p className="loading-screen__subtitle">{subtitle}</p>
+        {detail ? <p className="loading-screen__detail">{detail}</p> : null}
 
         {progress && progress.total > 0 && (
           <div className="loading-screen__progress" aria-label={`Loading ${percent}%`}>
