@@ -8,8 +8,8 @@
       "please", 
       "thank you", 
       "sorry", 
-      "hello", 
-      "goodbye", 
+      "hi", 
+      "bye bye", 
       "I don't know", 
       "I want", 
       "I need", 
@@ -70,7 +70,7 @@
         "potty", 
         "eat", 
         "drink", 
-        "dress", 
+        "get dressed", 
         "undress", 
         "change", 
         "clean", 
@@ -153,6 +153,7 @@
         "shirt", 
         "pants", 
         "shoes", 
+        "dress",
         "pajamas",
         "jacket",
         "hat", 
@@ -251,6 +252,22 @@
         "feet",
         "toes",
         "belly"
+      ]
+    },
+    {
+      "id": "shapes",
+      "name": "🔷 Shapes",
+      "color": "#E1F5FE",
+      "accentColor": "#0288D1",
+      "items": [
+        "circle",
+        "square",
+        "triangle",
+        "rectangle",
+        "oval",
+        "diamond",
+        "star",
+        "heart"
       ]
     }
   ],
@@ -421,15 +438,15 @@
       "image": "/images/sorry.svg",
       "audio": "/audio/sorry.mp3"
     },
-    "hello": {
-      "label": "Hello",
+    "hi": {
+      "label": "Hi",
       "image": "/images/hello.svg",
-      "audio": "/audio/hello.mp3"
+      "audio": "/audio/hi.mp3"
     },
-    "goodbye": {
-      "label": "Goodbye",
+    "bye bye": {
+      "label": "Bye Bye",
       "image": "/images/goodbye.svg",
-      "audio": "/audio/goodbye.mp3"
+      "audio": "/audio/bye-bye.mp3"
     },
     "I don't know": {
       "label": "I don't know",
@@ -1295,6 +1312,51 @@
       "label": "Belly",
       "image": "/images/belly.svg",
       "audio": "/audio/belly.mp3"
+    },
+    "get dressed": {
+      "label": "Get dressed",
+      "image": "/images/get-dressed.svg",
+      "audio": "/audio/get-dressed.mp3"
+    },
+    "circle": {
+      "label": "Circle",
+      "image": "/images/circle.svg",
+      "audio": "/audio/circle.mp3"
+    },
+    "square": {
+      "label": "Square",
+      "image": "/images/square.svg",
+      "audio": "/audio/square.mp3"
+    },
+    "triangle": {
+      "label": "Triangle",
+      "image": "/images/triangle.svg",
+      "audio": "/audio/triangle.mp3"
+    },
+    "rectangle": {
+      "label": "Rectangle",
+      "image": "/images/rectangle.svg",
+      "audio": "/audio/rectangle.mp3"
+    },
+    "oval": {
+      "label": "Oval",
+      "image": "/images/oval.svg",
+      "audio": "/audio/oval.mp3"
+    },
+    "diamond": {
+      "label": "Diamond",
+      "image": "/images/diamond.svg",
+      "audio": "/audio/diamond.mp3"
+    },
+    "star": {
+      "label": "Star",
+      "image": "/images/star.svg",
+      "audio": "/audio/star.mp3"
+    },
+    "heart": {
+      "label": "Heart",
+      "image": "/images/heart.svg",
+      "audio": "/audio/heart.mp3"
     }
   }
 }
